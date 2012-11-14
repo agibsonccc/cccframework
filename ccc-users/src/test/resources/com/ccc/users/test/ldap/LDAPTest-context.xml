@@ -1,0 +1,173 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:p="http://www.springframework.org/schema/p"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+	http://www.springframework.org/schema/security 
+	http://www.springframework.org/schema/security/spring-security-3.1.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<tx:annotation-driven />
+
+
+
+
+
+
+
+
+	<!-- Properties files -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:com/ccc/users/test/ldap/security.properties</value>
+				<value>classpath:com/ccc/users/test/ldap/ldap.properties</value>
+				<value>classpath:com/ccc/users/test/ldap/hibernate.properties
+				</value>
+
+			</list>
+		</property>
+	</bean>
+
+
+
+	<!-- Votes if any ConfigAttribute.getAttribute() starts with a prefix indicating 
+		that it is a role. The -->
+	<!-- default prefix string is ROLE_, but this may be overridden to any value. 
+		It may also be set to -->
+	<!-- empty, which means that essentially any attribute will be voted on. 
+		As described further -->
+	<!-- below, the effect of an empty prefix may not be quite desirable. -->
+	<!-- Abstains from voting if no configuration attribute commences with the 
+		role prefix. Votes to -->
+	<!-- grant access if there is an exact matching -->
+	<!-- org.springframework.security.core.GrantedAuthority to a ConfigAttribute 
+		starting with the role -->
+	<!-- prefix. Votes to deny access if there is no exact matching GrantedAuthority 
+		to a -->
+	<!-- ConfigAttribute starting with the role prefix. -->
+	<!-- An empty role prefix means that the voter will vote for every ConfigAttribute. 
+		When there are -->
+	<!-- different categories of ConfigAttributes used, this will not be optimal 
+		since the voter will be -->
+	<!-- voting for attributes which do not represent roles. However, this option 
+		may be of some use -->
+	<!-- when using pre-existing role names without a prefix, and no ability 
+		exists to prefix them with -->
+	<!-- a role prefix on reading them in, such as provided for example in -->
+	<!-- org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl. -->
+	<!-- All comparisons and prefixes are case sensitive. -->
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter"
+		p:rolePrefix="" />
+
+	<!-- Votes if a ConfigAttribute.getAttribute() of IS_AUTHENTICATED_FULLY 
+		or -->
+	<!-- IS_AUTHENTICATED_REMEMBERED or IS_AUTHENTICATED_ANONYMOUSLY is present. 
+		This list -->
+	<!-- is in order of most strict checking to least strict checking. -->
+	<!-- The current Authentication will be inspected to determine if the principal 
+		has a particular -->
+	<!-- level of authentication. The "FULLY" authenticated option means the 
+		user is authenticated -->
+	<!-- fully (i.e. -->
+	<!-- org.springframework.security.authentication.AuthenticationTrustResolver.isAnonymous -->
+	<!-- (Authentication) is false and -->
+	<!-- org.springframework.security.authentication.AuthenticationTrustResolver.isRememberMe -->
+	<!-- (Authentication) is false). The "REMEMBERED" will grant access if the 
+		principal was either -->
+	<!-- authenticated via remember-me OR is fully authenticated. The "ANONYMOUSLY" 
+		will grant -->
+	<!-- access if the principal was authenticated via remember-me, OR anonymously, 
+		OR via full -->
+	<!-- authentication. -->
+	<!-- All comparisons and prefixes are case sensitive. -->
+	<bean id="authVoter"
+		class="org.springframework.security.access.vote.AuthenticatedVoter">
+	</bean>
+
+	<!-- Simple concrete implementation of -->
+	<!-- org.springframework.security.access.AccessDecisionManager that uses 
+		a consensus-based -->
+	<!-- approach. -->
+	<!-- "Consensus" here means majority-rule (ignoring abstains) rather than 
+		unanimous agreement -->
+	<!-- (ignoring abstains). If you require unanimity, please see UnanimousBased. -->
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.ConsensusBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<property name="decisionVoters">
+			<list>
+				<ref bean="roleVoter" />
+				<ref bean="authVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<security:ldap-user-service id="ldapUserService"
+		group-search-base="${spring.ldap.groupSearchBase}"
+		group-role-attribute="${spring.ldap.groupRoleAttribute}"
+		group-search-filter="${spring.ldap.groupSearchFilter}"
+		user-search-base="${spring.ldap.userSearchBase}" user-search-filter="${spring.ldap.userSearchFilter}" />
+
+
+	<security:authentication-manager>
+		<security:ldap-authentication-provider
+			server-ref="contextSource" group-search-base="${spring.ldap.groupSearchBase}"
+			user-search-base="${spring.ldap.userSearchBase}" user-search-filter="${spring.ldap.userSearchFilter}"
+			group-role-attribute="${spring.ldap.groupRoleAttribute}"
+			group-search-filter="${spring.ldap.groupSearchFilter}" role-prefix="${spring.ldap.rolePrefix}" />
+	</security:authentication-manager>
+
+	<security:ldap-server id="contextSource" url="${spring.ldap.url}"
+		port="389" manager-dn="${spring.ldap.managerDn}" manager-password="${spring.ldap.managerPassword}" />
+
+	<!-- LDAP Template used to execute core LDAP functionality -->
+	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
+		<constructor-arg ref="contextSource" />
+	</bean>
+
+
+	<bean id="ldapUserStore" class="com.ccc.users.ldap.store.LDAPUserStore">
+		<property name="dnForUsers" value="${user.dn}" />
+		<property name="userDirectory" value="${user.directory}" />
+	</bean>
+	
+
+	<bean id="ldapUserClient" class="com.ccc.users.ldap.client.LDAPUserClient">
+		<property name="userStore" ref="ldapUserStore" />
+		<property name="userDirectory" value="${user.directory}" />
+		<property name="baseDn" value="${user.dn}" />
+	</bean>
+
+	<!-- Password encoder for ldap -->
+	<bean id="ldapEncoder" class="org.springframework.security.authentication.encoding.LdapShaPasswordEncoder" />
+	<!-- Password encryption -->
+	<bean class="com.ccc.security.MyPasswordEncoder" id="passwordEncoder" />
+
+	<!-- A salt source is used to tell what property of the user to encrypt 
+		for each password. -->
+	<bean
+		class="org.springframework.security.authentication.dao.ReflectionSaltSource"
+		id="saltSource">
+		<!-- Property to be concactneated -->
+		<property name="userPropertyToUse" value="username" />
+	</bean>
+
+
+</beans>

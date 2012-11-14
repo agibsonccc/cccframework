@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>forex</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/conf/app-config.xml</param-value>
+	</context-param>
+	<!-- Reads request input using UTF-8 encoding <filter> <filter-name>characterEncodingFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+		<init-param> <param-name>encoding</param-name> <param-value>UTF-8</param-value> 
+		</init-param> <init-param> <param-name>forceEncoding</param-name> <param-value>true</param-value> 
+		</init-param> </filter> -->
+	<!-- Enables clean URLs with JSP views e.g. /welcome instead of /app/welcome 
+		<filter> <filter-name>UrlRewriteFilter</filter-name> <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class> 
+		</filter> -->
+	<!-- Spring Security configuration -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<!-- <filter> <description>Convert posted method parameters into HTTP method, 
+		since browsers currently only support GET and POST.</description> <filter-name>httpMethodFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class> 
+		</filter> <filter> <description>Specify a character encoding for requests. 
+		This is useful because current browsers typically do not set a character 
+		encoding even if specified in the HTML page or form.</description> <filter-name>encodingFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+		<init-param> <param-name>encoding</param-name> <param-value>UTF-8</param-value> 
+		</init-param> <init-param> <param-name>forceEncoding</param-name> <param-value>true</param-value> 
+		</init-param> </filter> <filter> <description>Url rewrite engine that acts 
+		as a mod_rewrite, uses the configuration located at WEB-INF/urlrewrite.xml 
+		see http://tuckey.org/urlrewrite/</description> <filter-name>rewriteFilter</filter-name> 
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>characterEncodingFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> <filter-mapping> <filter-name>rewriteFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+		<!-- <dispatcher>FORWARD</dispatcher> <dispatcher>REQUEST</dispatcher> -->
+	</filter-mapping>
+	<!-- <filter-mapping> <filter-name>httpMethodFilter</filter-name> <url-pattern>/*</url-pattern> 
+		<dispatcher>FORWARD</dispatcher> <dispatcher>REQUEST</dispatcher> </filter-mapping> 
+		<filter-mapping> <filter-name>encodingFilter</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> <filter-mapping> <filter-name>rewriteFilter</filter-name> 
+		<url-pattern>/*</url-pattern> <dispatcher>REQUEST</dispatcher> </filter-mapping> -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>forex</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>forex</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- Authentication service  -->
+	<servlet>
+		<servlet-name>${servlet.name}</servlet-name>
+		<servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>${servlet.name}</servlet-name>
+		<url-pattern>/authService</url-pattern>
+	</servlet-mapping>
+
+</web-app>

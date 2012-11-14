@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ccc.mail</groupId>
+	<artifactId>ccc-maildir</artifactId>
+	<name>CCC Mail dir</name>
+	<description>Mail dir implementation for java mail</description>
+	<parent>
+		<groupId>com.ccc</groupId>
+		<artifactId>ccc-mail</artifactId>
+		<version>1.1</version>
+		<relativePath>../</relativePath>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>com.ccc.mail</groupId>
+			<artifactId>mail-core</artifactId>
+			<version>${cccframework.version}</version>
+		</dependency>
+
+	</dependencies>
+</project>

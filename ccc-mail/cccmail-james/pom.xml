@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ccc.mail</groupId>
+	<artifactId>cccmail-james</artifactId>
+	<name>CCC mail james</name>
+	<description>Apache james mailets and matchers</description>
+
+	<parent>
+		<groupId>com.ccc</groupId>
+		<artifactId>ccc-mail</artifactId>
+		<version>1.1</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+	<properties>
+		<mailet.version>1.1</mailet.version>
+		<james.version>3.0-beta5-SNAPSHOT</james.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ccc.mail</groupId>
+			<artifactId>mail-list</artifactId>
+			<version>${cccframework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.james</groupId>
+			<artifactId>apache-mailet-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.james</groupId>
+			<artifactId>james-server-core</artifactId>
+			<version>${james.version}</version>
+
+		</dependency>
+		<dependency>
+			<groupId>org.apache.james</groupId>
+			<artifactId>apache-mime4j</artifactId>
+			<version>0.7.2</version>
+			<type>pom</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.james</groupId>
+			<artifactId>james-server-mailets</artifactId>
+			<version>${james.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>geronimo-javamail_1.4_mail</artifactId>
+					<groupId>org.apache.geronimo.javamail</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>
+						geronimo-activation_1.1_spec
+					</artifactId>
+					<groupId>org.apache.geronimo.specs</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.james</groupId>
+			<artifactId>apache-mime4j-benchmark</artifactId>
+			<version>0.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.james</groupId>
+			<artifactId>james-server-protocols-smtp</artifactId>
+			<version>${james.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.james.protocols</groupId>
+			<artifactId>protocols-smtp</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+	</dependencies>
+</project>

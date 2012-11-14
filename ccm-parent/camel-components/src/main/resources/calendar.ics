@@ -1,0 +1,1408 @@
+BEGIN:VCALENDAR
+PRODID:Zimbra-Calendar-Provider
+VERSION:2.0
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Central Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T020000
+TZOFFSETTO:-0600
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=11
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETTO:-0500
+TZOFFSETFROM:-0600
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:America/Detroit
+BEGIN:STANDARD
+DTSTART:20111106T020000
+TZOFFSETTO:-0500
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20110313T020000
+TZOFFSETTO:-0400
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:Eastern Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T020000
+TZOFFSETTO:-0500
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=11
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETTO:-0400
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:(GMT-05.00) Eastern Time (US & Canada)
+BEGIN:STANDARD
+DTSTART:19710101T020000
+TZOFFSETTO:-0500
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;WKST=MO;INTERVAL=1;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19710101T020000
+TZOFFSETTO:-0400
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;WKST=MO;INTERVAL=1;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:19701101T020000
+TZOFFSETTO:-0500
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19700308T020000
+TZOFFSETTO:-0400
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:84af3143-40dc-4d71-9a07-0c316abf41d3
+SUMMARY:Mandatory Final Hall Meeting
+DESCRIPTION:The following is a new meeting request:\n\nSubject: Mandatory Fi
+ nal Hall Meeting \nOrganizer: \"Eddie Leonard\" <emleonar@mtu.edu> \n\nLocat
+ ion: Kitchenette \nTime: Monday\, April 20\, 2009\, 10:00:00 PM - 10:25:00 P
+ M GMT -05:00 US/Canada Eastern\n \nInvitees: \"lambda3-0-l\" <lambda3-0-l@mt
+ u.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>Mandatory Final Hall Meeting </td></tr>\n<tr><th align=left>Organizer:</th
+ ><td>\"Eddie Leonard\" &lt\;emleonar@mtu.edu&gt\; </td></tr>\n</table>\n<p>\
+ n<table border='0'>\n<tr><th align=left>Location:</th><td>Kitchenette </td><
+ /tr>\n<tr><th align=left>Time:</th><td>Monday\, April 20\, 2009\, 10:00:00 P
+ M - 10:25:00 PM GMT -05:00 US/Canada Eastern\n </td></tr></table>\n<p>\n<tab
+ le border='0'>\n<tr><th align=left>Invitees:</th><td>\"lambda3-0-l\" <lambda
+ 3-0-l@mtu.edu> </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br></body>
+ </html>
+LOCATION:Kitchenette
+ATTENDEE;CN=lambda3-0-l;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:lambda3-0-l@mtu.edu
+ORGANIZER;CN=Eddie Leonard:mailto:emleonar@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20090420T220000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20090420T222500
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20090420T193141Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d236ffeb-0a87-4b84-b635-ba3acd035f68
+SUMMARY:Calculus
+X-ALT-DESC;FMTTYPE=text/html:<html><body><div style='font-family:Times New R
+ oman\; font-size: 12pt\; color: #000000\;'><br></div></body></html>
+LOCATION:Library Student Room 235
+ATTENDEE;CN=Library Student Room 235;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PA
+ RTSTAT=ACCEPTED;RSVP=TRUE:mailto:library-235-rm@mtu.edu
+ORGANIZER;CN=Adam Gibson:mailto:aegibson@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20091105T190000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20091105T210000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20091106T000655Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0ef3e5e5-80b5-4642-abbb-f20c9c91f304
+SUMMARY:Calculus
+X-ALT-DESC;FMTTYPE=text/html:<html><body></body></html>
+LOCATION:Library
+ORGANIZER;CN=Adam Gibson:mailto:aegibson@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20091109T160000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20091109T180000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20091108T210555Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ec62d2a1-df5c-4fe6-8a86-9ac2cf9fee6d
+SUMMARY:Computer Science
+X-ALT-DESC;FMTTYPE=text/html:<html><body><div style='font-family:Times New R
+ oman\; font-size: 12pt\; color: #000000\;'><br></div></body></html>
+LOCATION:Library
+ATTENDEE;CN=Library Student Room 305;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PA
+ RTSTAT=ACCEPTED;RSVP=TRUE:mailto:library-305-rm@mtu.edu
+ORGANIZER;CN=Adam Gibson:mailto:aegibson@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20091112T170000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20091112T190000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20091112T212509Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:274c01c0-9e46-4772-9aaf-12927b0f286e
+SUMMARY:HR Employment Business Process Analysis Kick-off
+DESCRIPTION:The following meeting has been modified:\n\nSubject: HR Employme
+ nt Business Process Analysis Kick-off \nOrganizer: \"Mary Zanoni\" <mmzanoni
+ @mtu.edu> \n\nResources: lakeshore-conf2-rm@mtu.edu \nTime: Tuesday\, July 6
+ \, 2010\, 10:00:00 AM - 4:00:00 PM GMT -05:00 US/Canada Eastern\n \nInvitees
+ : \"Robert Maatta\" <rwmaatta@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>
+ \; \"Kevin Peltola\" <krpeltol@mtu.edu>\; mekelly@mtu.edu\; \"Adam Gibson\" 
+ <aegibson@mtu.edu>\; \"Phyllis Clevenger\" <pacleven@mtu.edu>\; \"Janelle Ho
+ safros\" <jlhosafr@mtu.edu>\; \"Renee Ozanich\" <rozanich@mtu.edu> \n\n*~*~*
+ ~*~*~*~*~*~*~*\n\n\nITOxygen HR Business Process Analysis begins by working 
+ with Employment. This is the first meeting to get the basic process informat
+ ion from Employment Staff. 
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following meeting has been 
+ modified:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><
+ td>HR Employment Business Process Analysis Kick-off </td></tr>\n<tr><th alig
+ n=left>Organizer:</th><td>\"Mary Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></
+ tr>\n</table>\n<p>\n<table border='0'>\n<tr><th align=left>Resources:</th><t
+ d>lakeshore-conf2-rm@mtu.edu </td></tr>\n<tr><th align=left>Time:</th><td>Tu
+ esday\, July 6\, 2010\, 10:00:00 AM - 4:00:00 PM GMT -05:00 US/Canada Easter
+ n\n </td></tr></table>\n<p>\n<table border='0'>\n<tr><th align=left>Invitees
+ :</th><td>\"Robert Maatta\" <rwmaatta@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@
+ mtu.edu>\; \"Kevin Peltola\" <krpeltol@mtu.edu>\; mekelly@mtu.edu\; \"Adam G
+ ibson\" <aegibson@mtu.edu>\; \"Phyllis Clevenger\" <pacleven@mtu.edu>\; \"Ja
+ nelle Hosafros\" <jlhosafr@mtu.edu>\; \"Renee Ozanich\" <rozanich@mtu.edu> <
+ /td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-family
+ :Arial\; font-size: 10pt\; color: #000000\;'><DIV style=\"FONT-SIZE: 10pt\; 
+ COLOR: #000000\; FONT-FAMILY: Arial\">ITOxygen HR Business Process Analysis 
+ begins by working with Employment. This is the first meeting to get the basi
+ c process information from Employment Staff. </DIV></div></body></html>
+LOCATION:Lakeshore Center Conference 2
+ATTENDEE;CN=Robert Maatta;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rwmaatta@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:krpeltol@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto:mekelly@mtu
+ .edu
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Phyllis Clevenger;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TR
+ UE:mailto:pacleven@mtu.edu
+ATTENDEE;CN=Janelle Hosafros;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRU
+ E:mailto:jlhosafr@mtu.edu
+ATTENDEE;CN=Renee Ozanich;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rozanich@mtu.edu
+ATTENDEE;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:ma
+ ilto:lakeshore-conf2-rm@mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100706T100000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100706T160000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100630T191748Z
+SEQUENCE:1
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2f63d08a-2757-464d-94c0-7dcc2065c293
+SUMMARY:ITOxygen Presentation to HR
+DESCRIPTION:The following is a new meeting request:\n\nSubject: ITOxygen Pre
+ sentation to HR \nOrganizer: \"Mary Zanoni\" <mmzanoni@mtu.edu> \n\nLocation
+ : Lakeshore Center Board Room \nResources: Lakeshore Center Board Room (Buil
+ ding: Lakeshore Center\, Floor: 3rd\, Room: Board Room 3) \nTime: Tuesday\, 
+ July 13\, 2010\, 3:00:00 PM - 4:00:00 PM GMT -05:00 US/Canada Eastern\n \nIn
+ vitees: \"Robert Maatta\" <rwmaatta@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mt
+ u.edu>\; \"Kevin Peltola\" <krpeltol@mtu.edu>\; mekelly@mtu.edu\; \"Adam Gib
+ son\" <aegibson@mtu.edu>\; \"Phyllis Clevenger\" <pacleven@mtu.edu>\; \"Jane
+ lle Hosafros\" <jlhosafr@mtu.edu>\; \"Anita Quinn\" <aquinn@mtu.edu>\; \"Kel
+ ly Destrampe\" <kjdestra@mtu.edu>\; \"Rebecca Christianson\" <rwchrist@mtu.e
+ du>\, ... \n\n*~*~*~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>ITOxygen Presentation to HR </td></tr>\n<tr><th align=left>Organizer:</th>
+ <td>\"Mary Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<t
+ able border='0'>\n<tr><th align=left>Location:</th><td>Lakeshore Center Boar
+ d Room </td></tr>\n<tr><th align=left>Resources:</th><td>Lakeshore Center Bo
+ ard Room (Building: Lakeshore Center\, Floor: 3rd\, Room: Board Room 3) </td
+ ></tr>\n<tr><th align=left>Time:</th><td>Tuesday\, July 13\, 2010\, 3:00:00 
+ PM - 4:00:00 PM GMT -05:00 US/Canada Eastern\n </td></tr></table>\n<p>\n<tab
+ le border='0'>\n<tr><th align=left>Invitees:</th><td>\"Robert Maatta\" <rwma
+ atta@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \"Kevin Peltola\" <krp
+ eltol@mtu.edu>\; mekelly@mtu.edu\; \"Adam Gibson\" <aegibson@mtu.edu>\; \"Ph
+ yllis Clevenger\" <pacleven@mtu.edu>\; \"Janelle Hosafros\" <jlhosafr@mtu.ed
+ u>\; \"Anita Quinn\" <aquinn@mtu.edu>\; \"Kelly Destrampe\" <kjdestra@mtu.ed
+ u>\; \"Rebecca Christianson\" <rwchrist@mtu.edu>\, ... </td></tr></table>\n<
+ div>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-family:Arial\; font-size: 
+ 10pt\; color: #000000\;'></div></body></html>
+LOCATION:Lakeshore Center Board Room
+ATTENDEE;CN=Robert Maatta;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rwmaatta@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:krpeltol@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:mekelly
+ @mtu.edu
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Phyllis Clevenger;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TR
+ UE:mailto:pacleven@mtu.edu
+ATTENDEE;CN=Janelle Hosafros;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRU
+ E:mailto:jlhosafr@mtu.edu
+ATTENDEE;CN=Anita Quinn;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:aquinn@mtu.edu
+ATTENDEE;CN=Kelly Destrampe;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:kjdestra@mtu.edu
+ATTENDEE;CN=Rebecca Christianson;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;
+ RSVP=TRUE:mailto:rwchrist@mtu.edu
+ATTENDEE;CN=Renee Ozanich;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rozanich@mtu.edu
+ATTENDEE;CN=Laura Baril;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:labaril@mtu.edu
+ATTENDEE;CN=Renee Hiller;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:rlhiller@mtu.edu
+ATTENDEE;CN=wjmckill;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:ma
+ ilto:wjmckill@mtu.edu
+ATTENDEE;CN=Michael Gaddis;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=T
+ RUE:mailto:mwgaddis@mtu.edu
+ATTENDEE;CN=Bonnie Roth;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:blroth@mtu.edu
+ATTENDEE;CN=Ann Roth;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto
+ :aroth@mtu.edu
+ATTENDEE;CN=Karen Hext;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:
+ mailto:kphext@mtu.edu
+ATTENDEE;CN=Timothy Scullion;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP
+ =TRUE:mailto:tpsculli@mtu.edu
+ATTENDEE;CN=Kenneth Leivdal;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:keleivda@mtu.edu
+ATTENDEE;CN=Nancy Bykkonen;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=T
+ RUE:mailto:nabykkon@mtu.edu
+ATTENDEE;CN=Patricia Kyllonen;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSV
+ P=TRUE:mailto:pkkyllon@mtu.edu
+ATTENDEE;CN=Roberto Escobar;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:rjescoba@mtu.edu
+ATTENDEE;CN=Lakeshore Center Board Room;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT
+ ;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:lakeshore-board3-rm@mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100713T150000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100713T160000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100706T170044Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:51f6533d-2deb-450a-af18-6bc810bb9bab
+RRULE:FREQ=WEEKLY;COUNT=1;INTERVAL=1;BYDAY=TU
+SUMMARY:Employment Processes weekly meeting
+DESCRIPTION:The following is a new meeting request:\n\nSubject: Employment P
+ rocesses weekly meeting \nOrganizer: \"Mary Zanoni\" <mmzanoni@mtu.edu> \n\n
+ Location: Lakeshore Center Conference 2 \nResources: Lakeshore Center Confer
+ ence 2 (Building: Lakeshore Center\, Floor: 2nd\, Room: Conference 2) \nTime
+ : 2:00:00 PM - 3:00:00 PM GMT -05:00 US/Canada Eastern\n Recurrence : Every 
+ Tuesday. End after 1 occurrence(s). Effective Jul 20\, 2010.\n\nInvitees: \"
+ Robert Maatta\" <rwmaatta@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \
+ "Kevin Peltola\" <krpeltol@mtu.edu>\; mekelly@mtu.edu\; \"Adam Gibson\" <aeg
+ ibson@mtu.edu>\; \"Phyllis Clevenger\" <pacleven@mtu.edu>\; \"Janelle Hosafr
+ os\" <jlhosafr@mtu.edu>\; \"Renee Ozanich\" <rozanich@mtu.edu> \n\n*~*~*~*~*
+ ~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>Employment Processes weekly meeting </td></tr>\n<tr><th align=left>Organiz
+ er:</th><td>\"Mary Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></tr>\n</table>\
+ n<p>\n<table border='0'>\n<tr><th align=left>Location:</th><td>Lakeshore Cen
+ ter Conference 2 </td></tr>\n<tr><th align=left>Resources:</th><td>Lakeshore
+  Center Conference 2 (Building: Lakeshore Center\, Floor: 2nd\, Room: Confer
+ ence 2) </td></tr>\n<tr><th align=left>Time:</th><td>2:00:00 PM - 3:00:00 PM
+  GMT -05:00 US/Canada Eastern\n </td></tr><tr><th align=left>Recurrence</th>
+ <td>: Every Tuesday. End after 1 occurrence(s). Effective Jul 20\, 2010.</td
+ ></tr>\n</table>\n<p>\n<table border='0'>\n<tr><th align=left>Invitees:</th>
+ <td>\"Robert Maatta\" <rwmaatta@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.ed
+ u>\; \"Kevin Peltola\" <krpeltol@mtu.edu>\; mekelly@mtu.edu\; \"Adam Gibson\
+ " <aegibson@mtu.edu>\; \"Phyllis Clevenger\" <pacleven@mtu.edu>\; \"Janelle 
+ Hosafros\" <jlhosafr@mtu.edu>\; \"Renee Ozanich\" <rozanich@mtu.edu> </td></
+ tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-family:Arial
+ \; font-size: 10pt\; color: #000000\;'></div></body></html>
+LOCATION:Lakeshore Center Conference 2
+ATTENDEE;CN=Robert Maatta;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rwmaatta@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:krpeltol@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:mekelly
+ @mtu.edu
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Phyllis Clevenger;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TR
+ UE:mailto:pacleven@mtu.edu
+ATTENDEE;CN=Janelle Hosafros;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRU
+ E:mailto:jlhosafr@mtu.edu
+ATTENDEE;CN=Renee Ozanich;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rozanich@mtu.edu
+ATTENDEE;CN=Lakeshore Center Conference 2;CUTYPE=RESOURCE;ROLE=NON-PARTICIPA
+ NT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:lakeshore-conf2-rm@mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100720T140000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100720T150000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100706T170335Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1eb3e477-f5a3-41e3-8faf-a0e45e15b67c
+SUMMARY:Employment Processes weekly meeting
+DESCRIPTION:The following is a new meeting request:\n\nSubject: Employment P
+ rocesses weekly meeting \nOrganizer: \"Mary Zanoni\" <mmzanoni@mtu.edu> \n\n
+ Location: Lakeshore Center Conference 2 \nResources: Lakeshore Center Confer
+ ence 2 (Building: Lakeshore Center\, Floor: 2nd\, Room: Conference 2) \nTime
+ : Tuesday\, July 27\, 2010\, 2:00:00 PM - 3:00:00 PM GMT -05:00 US/Canada Ea
+ stern\n \nInvitees: \"Phyllis Clevenger\" <pacleven@mtu.edu>\; \"Janelle Hos
+ afros\" <jlhosafr@mtu.edu>\; \"Renee Ozanich\" <rozanich@mtu.edu>\; \"Adam G
+ ibson\" <aegibson@mtu.edu>\; mekelly@mtu.edu\; \"Kevin Peltola\" <krpeltol@m
+ tu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \"Robert Maatta\" <rwmaatta@
+ mtu.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>Employment Processes weekly meeting </td></tr>\n<tr><th align=left>Organiz
+ er:</th><td>\"Mary Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></tr>\n</table>\
+ n<p>\n<table border='0'>\n<tr><th align=left>Location:</th><td>Lakeshore Cen
+ ter Conference 2 </td></tr>\n<tr><th align=left>Resources:</th><td>Lakeshore
+  Center Conference 2 (Building: Lakeshore Center\, Floor: 2nd\, Room: Confer
+ ence 2) </td></tr>\n<tr><th align=left>Time:</th><td>Tuesday\, July 27\, 201
+ 0\, 2:00:00 PM - 3:00:00 PM GMT -05:00 US/Canada Eastern\n </td></tr></table
+ >\n<p>\n<table border='0'>\n<tr><th align=left>Invitees:</th><td>\"Phyllis C
+ levenger\" <pacleven@mtu.edu>\; \"Janelle Hosafros\" <jlhosafr@mtu.edu>\; \"
+ Renee Ozanich\" <rozanich@mtu.edu>\; \"Adam Gibson\" <aegibson@mtu.edu>\; me
+ kelly@mtu.edu\; \"Kevin Peltola\" <krpeltol@mtu.edu>\; \"Kyle Dykstra\" <krd
+ ykstr@mtu.edu>\; \"Robert Maatta\" <rwmaatta@mtu.edu> </td></tr></table>\n<d
+ iv>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-family:Arial\; font-size: 1
+ 0pt\; color: #000000\;'></div></body></html>
+LOCATION:Lakeshore Center Conference 2
+ATTENDEE;CN=Phyllis Clevenger;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSV
+ P=TRUE:mailto:pacleven@mtu.edu
+ATTENDEE;CN=Janelle Hosafros;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP
+ =TRUE:mailto:jlhosafr@mtu.edu
+ATTENDEE;CN=Renee Ozanich;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rozanich@mtu.edu
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:mekelly
+ @mtu.edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:krpeltol@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Robert Maatta;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rwmaatta@mtu.edu
+ATTENDEE;CN=Lakeshore Center Conference 2;CUTYPE=RESOURCE;ROLE=NON-PARTICIPA
+ NT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:lakeshore-conf2-rm@mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100727T140000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100727T150000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100720T190054Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0321c52f-da67-404c-80d5-e8479502aa7b
+SUMMARY:Benefits first meeting with ITOxygen
+DESCRIPTION:The following meeting has been modified:\n\nSubject: Benefits fi
+ rst meeting with ITOxygen \nOrganizer: \"Mary Zanoni\" <mmzanoni@mtu.edu> \n
+ \nTime: Friday\, August 6\, 2010\, 10:00:00 AM - 12:00:00 PM GMT -05:00 US/C
+ anada Eastern [MODIFIED]\n \nInvitees: \"Adam Gibson\" <aegibson@mtu.edu>\; 
+ mekelly@mtu.edu\; \"Kevin Peltola\" <krpeltol@mtu.edu>\; \"Kyle Dykstra\" <k
+ rdykstr@mtu.edu>\; \"Robert Maatta\" <rwmaatta@mtu.edu>\; \"Renee Hiller\" <
+ rlhiller@mtu.edu>\; \"Karen Hext\" <kphext@mtu.edu>\; \"Nancy Bykkonen\" <na
+ bykkon@mtu.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n\n\nBenefits is not available on 
+ Tues\, Aug. 3\, so I am moving the meeting to Friday\, Aug 6th and extending
+  it to two hours. We can have pizza/salad for lunch at the end.   We'll meet
+  in the Lean room.  Mary 
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following meeting has been 
+ modified:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><
+ td>Benefits first meeting with ITOxygen </td></tr>\n<tr><th align=left>Organ
+ izer:</th><td>\"Mary Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></tr>\n</table
+ >\n<p>\n<table border='0'>\n<tr><th align=left>Time:</th><td>Friday\, August
+  6\, 2010\, 10:00:00 AM - 12:00:00 PM GMT -05:00 US/Canada Eastern [MODIFIED
+ ]\n </td></tr></table>\n<p>\n<table border='0'>\n<tr><th align=left>Invitees
+ :</th><td>\"Adam Gibson\" <aegibson@mtu.edu>\; mekelly@mtu.edu\; \"Kevin Pel
+ tola\" <krpeltol@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \"Robert M
+ aatta\" <rwmaatta@mtu.edu>\; \"Renee Hiller\" <rlhiller@mtu.edu>\; \"Karen H
+ ext\" <kphext@mtu.edu>\; \"Nancy Bykkonen\" <nabykkon@mtu.edu> </td></tr></t
+ able>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-family:Arial\; fon
+ t-size: 10pt\; color: #000000\;'><DIV style=\"FONT-SIZE: 10pt\; COLOR: #0000
+ 00\; FONT-FAMILY: Arial\">\n<DIV style=\"FONT-SIZE: 10pt\; COLOR: #000000\; 
+ FONT-FAMILY: Arial\">Benefits is not available on Tues\, Aug. 3\, so I am&nb
+ sp\;moving the meeting to Friday\, Aug 6th and extending it to two hours. We
+  can have pizza/salad for lunch at the end.&nbsp\;&nbsp\; We'll meet in the 
+ Lean room.&nbsp\; Mary</DIV></DIV></div></body></html>
+LOCATION:Lakeshore LEAN room
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto:mekelly@mtu
+ .edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:m
+ ailto:krpeltol@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Robert Maatta;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rwmaatta@mtu.edu
+ATTENDEE;CN=Renee Hiller;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:rlhiller@mtu.edu
+ATTENDEE;CN=Karen Hext;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:
+ mailto:kphext@mtu.edu
+ATTENDEE;CN=Nancy Bykkonen;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:
+ mailto:nabykkon@mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100806T100000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100806T120000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100720T195303Z
+SEQUENCE:2
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:244825f6-5cab-47a3-8c5a-899d64a7c959
+SUMMARY:BA2700 Class Meeting
+DESCRIPTION:The following is a new meeting request:\n\nSubject: BA2700 Class
+  Meeting \nOrganizer: \"Teresa Woods\" <tmthomps@mtu.edu> \n\nLocation: Fish
+ er 232 \nTime: Thursday\, July 29\, 2010\, 11:05:00 AM - 12:20:00 PM GMT -05
+ :00 US/Canada Eastern\n \nInvitees: \"ba2700-l\" <ba2700-l@mtu.edu> \n\n*~*~
+ *~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>BA2700 Class Meeting </td></tr>\n<tr><th align=left>Organizer:</th><td>\"T
+ eresa Woods\" &lt\;tmthomps@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table b
+ order='0'>\n<tr><th align=left>Location:</th><td>Fisher 232 </td></tr>\n<tr>
+ <th align=left>Time:</th><td>Thursday\, July 29\, 2010\, 11:05:00 AM - 12:20
+ :00 PM GMT -05:00 US/Canada Eastern\n </td></tr></table>\n<p>\n<table border
+ ='0'>\n<tr><th align=left>Invitees:</th><td>\"ba2700-l\" <ba2700-l@mtu.edu> 
+ </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br></body></html>
+LOCATION:Fisher 232
+ATTENDEE;CN=ba2700-l;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:ma
+ ilto:ba2700-l@mtu.edu
+ATTENDEE;PARTSTAT=ACCEPTED:mailto:aegibson@mtu.edu
+ORGANIZER;CN=Teresa Woods:mailto:tmthomps@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100729T110500
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100729T122000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100728T180640Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:28f72129-1b68-47b8-99a0-b1be2a064ab4
+RRULE:FREQ=WEEKLY;COUNT=4;INTERVAL=1;BYDAY=TH
+SUMMARY:ITOXygen/Benefits
+DESCRIPTION:The following is a new meeting request:\n\nSubject: ITOXygen/Ben
+ efits \nOrganizer: \"Mary Zanoni\" <mmzanoni@mtu.edu> \n\nTime: 11:00:00 AM 
+ - 12:00:00 PM GMT -05:00 US/Canada Eastern\n Recurrence : Every Thursday. En
+ d after 4 occurrence(s). Effective Aug 12\, 2010.\n\nInvitees: \"Adam Gibson
+ \" <aegibson@mtu.edu>\; mekelly@mtu.edu\; \"Kevin Peltola\" <krpeltol@mtu.ed
+ u>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \"Robert Maatta\" <rwmaatta@mtu.e
+ du>\; \"Renee Hiller\" <rlhiller@mtu.edu>\; \"Karen Hext\" <kphext@mtu.edu>\
+ ; \"Nancy Bykkonen\" <nabykkon@mtu.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>ITOXygen/Benefits </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Mary
+  Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table borde
+ r='0'>\n<tr><th align=left>Time:</th><td>11:00:00 AM - 12:00:00 PM GMT -05:0
+ 0 US/Canada Eastern\n </td></tr><tr><th align=left>Recurrence</th><td>: Ever
+ y Thursday. End after 4 occurrence(s). Effective Aug 12\, 2010.</td></tr>\n<
+ /table>\n<p>\n<table border='0'>\n<tr><th align=left>Invitees:</th><td>\"Ada
+ m Gibson\" <aegibson@mtu.edu>\; mekelly@mtu.edu\; \"Kevin Peltola\" <krpelto
+ l@mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \"Robert Maatta\" <rwmaat
+ ta@mtu.edu>\; \"Renee Hiller\" <rlhiller@mtu.edu>\; \"Karen Hext\" <kphext@m
+ tu.edu>\; \"Nancy Bykkonen\" <nabykkon@mtu.edu> </td></tr></table>\n<div>*~*
+ ~*~*~*~*~*~*~*~*</div><br><div style='font-family:Arial\; font-size: 10pt\; 
+ color: #000000\;'></div></body></html>
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:mekelly
+ @mtu.edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:krpeltol@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Robert Maatta;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rwmaatta@mtu.edu
+ATTENDEE;CN=Renee Hiller;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:ma
+ ilto:rlhiller@mtu.edu
+ATTENDEE;CN=Karen Hext;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:
+ mailto:kphext@mtu.edu
+ATTENDEE;CN=Nancy Bykkonen;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:
+ mailto:nabykkon@mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100812T110000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100812T120000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100806T153238Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:3dec9539-27d7-4dc8-9665-df20a6ae8754
+SUMMARY:ITOxygen/Payroll
+DESCRIPTION:The following meeting has been modified:\n\nSubject: ITOxygen/Pa
+ yroll \nOrganizer: \"Mary Zanoni\" <mmzanoni@mtu.edu> \n\nTime: Friday\, Sep
+ tember 10\, 2010\, 10:00:00 AM - 12:00:00 PM GMT -05:00 US/Canada Eastern\n 
+ \nInvitees: \"Adam Gibson\" <aegibson@mtu.edu>\; \"Kevin Peltola\" <krpeltol
+ @mtu.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \"Kelly Destrampe\" <kjdes
+ tra@mtu.edu>\; \"Timothy Scullion\" <tpsculli@mtu.edu>\; \"Tammie Vater\" <t
+ mvater@mtu.edu>\; \"M. Wayne Gaddis\" <mwgaddis@mtu.edu>\; \"Sean Thorpe\" <
+ sathorpe@mtu.edu>\; lgaiser@mtu.edu \n\n*~*~*~*~*~*~*~*~*~*\n\n\n\nLunch wil
+ l be served. 
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following meeting has been 
+ modified:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><
+ td>ITOxygen/Payroll </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Mary
+  Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table borde
+ r='0'>\n<tr><th align=left>Time:</th><td>Friday\, September 10\, 2010\, 10:0
+ 0:00 AM - 12:00:00 PM GMT -05:00 US/Canada Eastern\n </td></tr></table>\n<p>
+ \n<table border='0'>\n<tr><th align=left>Invitees:</th><td>\"Adam Gibson\" <
+ aegibson@mtu.edu>\; \"Kevin Peltola\" <krpeltol@mtu.edu>\; \"Kyle Dykstra\" 
+ <krdykstr@mtu.edu>\; \"Kelly Destrampe\" <kjdestra@mtu.edu>\; \"Timothy Scul
+ lion\" <tpsculli@mtu.edu>\; \"Tammie Vater\" <tmvater@mtu.edu>\; \"M. Wayne 
+ Gaddis\" <mwgaddis@mtu.edu>\; \"Sean Thorpe\" <sathorpe@mtu.edu>\; lgaiser@m
+ tu.edu </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='fon
+ t-family:Arial\; font-size: 10pt\; color: #000000\;'><DIV style=\"FONT-SIZE:
+  10pt\; COLOR: #000000\; FONT-FAMILY: Arial\">\n<DIV style=\"FONT-SIZE: 10pt
+ \; COLOR: #000000\; FONT-FAMILY: Arial\">Lunch will be served.</DIV></DIV></
+ div></body></html>
+LOCATION:HR Lean Room
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:krpeltol@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Kelly Destrampe;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:kjdestra@mtu.edu
+ATTENDEE;CN=Timothy Scullion;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP
+ =TRUE:mailto:tpsculli@mtu.edu
+ATTENDEE;CN=Tammie Vater;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:tmvater@mtu.edu
+ATTENDEE;CN=M. Wayne Gaddis;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:mwgaddis@mtu.edu
+ATTENDEE;CN=Sean Thorpe;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:sathorpe@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:lgaiser
+ @mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100910T100000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100910T120000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100902T150856Z
+SEQUENCE:2
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ac54f850-01bf-40bc-b43f-7cc3674e8891
+RRULE:FREQ=WEEKLY;COUNT=4;INTERVAL=1;BYDAY=FR
+SUMMARY:ITOxyegn/Payroll
+DESCRIPTION:The following is a new meeting request:\n\nSubject: ITOxyegn/Pay
+ roll \nOrganizer: \"Mary Zanoni\" <mmzanoni@mtu.edu> \n\nLocation: HR Lean R
+ oom \nTime: 11:00:00 AM - 12:00:00 PM GMT -05:00 US/Canada Eastern\n Recurre
+ nce : Every Friday. End after 4 occurrence(s). Effective Sep 17\, 2010.\n\nI
+ nvitees: \"Adam Gibson\" <aegibson@mtu.edu>\; \"Kevin Peltola\" <krpeltol@mt
+ u.edu>\; \"Kyle Dykstra\" <krdykstr@mtu.edu>\; \"Kelly Destrampe\" <kjdestra
+ @mtu.edu>\; \"Timothy Scullion\" <tpsculli@mtu.edu>\; \"Tammie Vater\" <tmva
+ ter@mtu.edu>\; \"M. Wayne Gaddis\" <mwgaddis@mtu.edu>\; \"Sean Thorpe\" <sat
+ horpe@mtu.edu>\; lgaiser@mtu.edu \n\n*~*~*~*~*~*~*~*~*~*\n\nWeekly 1 hour me
+ eting for 4 weeks 
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>ITOxyegn/Payroll </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Mary 
+ Zanoni\" &lt\;mmzanoni@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table border
+ ='0'>\n<tr><th align=left>Location:</th><td>HR Lean Room </td></tr>\n<tr><th
+  align=left>Time:</th><td>11:00:00 AM - 12:00:00 PM GMT -05:00 US/Canada Eas
+ tern\n </td></tr><tr><th align=left>Recurrence</th><td>: Every Friday. End a
+ fter 4 occurrence(s). Effective Sep 17\, 2010.</td></tr>\n</table>\n<p>\n<ta
+ ble border='0'>\n<tr><th align=left>Invitees:</th><td>\"Adam Gibson\" <aegib
+ son@mtu.edu>\; \"Kevin Peltola\" <krpeltol@mtu.edu>\; \"Kyle Dykstra\" <krdy
+ kstr@mtu.edu>\; \"Kelly Destrampe\" <kjdestra@mtu.edu>\; \"Timothy Scullion\
+ " <tpsculli@mtu.edu>\; \"Tammie Vater\" <tmvater@mtu.edu>\; \"M. Wayne Gaddi
+ s\" <mwgaddis@mtu.edu>\; \"Sean Thorpe\" <sathorpe@mtu.edu>\; lgaiser@mtu.ed
+ u </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-fam
+ ily:Arial\; font-size: 10pt\; color: #000000\;'>Weekly 1 hour meeting for 4 
+ weeks</div></body></html>
+LOCATION:HR Lean Room
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Kevin Peltola;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:krpeltol@mtu.edu
+ATTENDEE;CN=Kyle Dykstra;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:krdykstr@mtu.edu
+ATTENDEE;CN=Kelly Destrampe;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:kjdestra@mtu.edu
+ATTENDEE;CN=Timothy Scullion;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP
+ =TRUE:mailto:tpsculli@mtu.edu
+ATTENDEE;CN=Tammie Vater;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:tmvater@mtu.edu
+ATTENDEE;CN=M. Wayne Gaddis;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:mwgaddis@mtu.edu
+ATTENDEE;CN=Sean Thorpe;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:sathorpe@mtu.edu
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:lgaiser
+ @mtu.edu
+ORGANIZER;CN=Mary Zanoni:mailto:mmzanoni@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100917T110000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100917T120000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100902T151027Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c77fefd0-e87f-43e2-9c41-e72ad4ff0393
+SUMMARY:BA HW time
+DESCRIPTION:The following meeting has been modified:\n\nSubject: BA HW time 
+ \nOrganizer: \"Burcin Tolu\" <btolu@mtu.edu> \n\nResources: library-114-rm@m
+ tu.edu \nTime: Wednesday\, September 22\, 2010\, 3:00:00 PM - 5:00:00 PM GMT
+  -05:00 US/Canada Eastern [MODIFIED]\n \nInvitees: \"kkotonik\" <kkotonik@mt
+ u.edu>\; \"djbluhm\" <djbluhm@mtu.edu>\; \"aegibson\" <aegibson@mtu.edu> \n\
+ n*~*~*~*~*~*~*~*~*~*\n\n\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following meeting has been 
+ modified:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><
+ td>BA HW time </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Burcin Tol
+ u\" &lt\;btolu@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table border='0'>\n<
+ tr><th align=left>Resources:</th><td>library-114-rm@mtu.edu </td></tr>\n<tr>
+ <th align=left>Time:</th><td>Wednesday\, September 22\, 2010\, 3:00:00 PM - 
+ 5:00:00 PM GMT -05:00 US/Canada Eastern [MODIFIED]\n </td></tr></table>\n<p>
+ \n<table border='0'>\n<tr><th align=left>Invitees:</th><td>\"kkotonik\" <kko
+ tonik@mtu.edu>\; \"djbluhm\" <djbluhm@mtu.edu>\; \"aegibson\" <aegibson@mtu.
+ edu> </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-
+ family:Arial\; font-size: 12pt\; color: #000099\;'><div style=\"font-family:
+ Arial\; font-size: 12pt\; color: #000099\;\"><div style=\"font-family:Arial\
+ ; font-size: 12pt\; color: #000099\;\"></div></div></div></body></html>
+LOCATION:Library Student Room 114
+ATTENDEE;CN=kkotonik;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:ma
+ ilto:kkotonik@mtu.edu
+ATTENDEE;CN=djbluhm;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mai
+ lto:djbluhm@mtu.edu
+ATTENDEE;CN=aegibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto
+ :aegibson@mtu.edu
+ATTENDEE;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PARTSTAT=DECLINED;RSVP=TRUE:ma
+ ilto:library-114-rm@mtu.edu
+ORGANIZER;CN=Burcin Tolu:mailto:btolu@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100922T150000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20100922T170000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20100922T134414Z
+SEQUENCE:2
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eee8541b-ea80-4ffa-b452-edb3ab8a1b54
+SUMMARY:BA hw time
+DESCRIPTION:The following is a new meeting request:\n\nSubject: BA hw time \
+ nOrganizer: \"Burcin Tolu\" <btolu@mtu.edu> \n\nLocation: Library Student Ro
+ om 114 \nResources: Library Student Room 114 (Building: Library \, Room: 114
+ ) \nTime: Wednesday\, October 13\, 2010\, 3:00:00 PM - 5:00:00 PM GMT -05:00
+  US/Canada Eastern\n \nInvitees: \"Adam Gibson\" <aegibson@mtu.edu>\; \"Dan 
+ Bluhm\" <djbluhm@mtu.edu>\; \"Kristina Kotonika\" <kkotonik@mtu.edu> \n\n*~*
+ ~*~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>BA hw time </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Burcin Tolu
+ \" &lt\;btolu@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table border='0'>\n<t
+ r><th align=left>Location:</th><td>Library Student Room 114 </td></tr>\n<tr>
+ <th align=left>Resources:</th><td>Library Student Room 114 (Building: Librar
+ y \, Room: 114) </td></tr>\n<tr><th align=left>Time:</th><td>Wednesday\, Oct
+ ober 13\, 2010\, 3:00:00 PM - 5:00:00 PM GMT -05:00 US/Canada Eastern\n </td
+ ></tr></table>\n<p>\n<table border='0'>\n<tr><th align=left>Invitees:</th><t
+ d>\"Adam Gibson\" <aegibson@mtu.edu>\; \"Dan Bluhm\" <djbluhm@mtu.edu>\; \"K
+ ristina Kotonika\" <kkotonik@mtu.edu> </td></tr></table>\n<div>*~*~*~*~*~*~*
+ ~*~*~*</div><br><div style='font-family:Arial\; font-size: 12pt\; color: #00
+ 0099\;'></div></body></html>
+LOCATION:Library Student Room 114
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Dan Bluhm;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:m
+ ailto:djbluhm@mtu.edu
+ATTENDEE;CN=Kristina Kotonika;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSV
+ P=TRUE:mailto:kkotonik@mtu.edu
+ATTENDEE;CN=Library Student Room 114;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PA
+ RTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:library-114-rm@mtu.edu
+ORGANIZER;CN=Burcin Tolu:mailto:btolu@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101013T150000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101013T170000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20101012T015507Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:78ec56f6-c16d-40e5-b6ac-17d33ffb4003
+SUMMARY:BA2300 homework time!
+DESCRIPTION:The following meeting has been modified:\n\nSubject: BA2300 home
+ work time! \nOrganizer: \"Burcin Tolu\" <btolu@mtu.edu> \n\nLocation: Librar
+ y Student Room 114 [MODIFIED]\nResources: Library Student Room 114 (Building
+ : Library \, Room: 114) [MODIFIED]\nTime: Wednesday\, October 27\, 2010\, 3:
+ 00:00 PM - 5:00:00 PM GMT -05:00 US/Canada Eastern\n \nInvitees: \"Kristina 
+ Kotonika\" <kkotonik@mtu.edu>\; \"Dan Bluhm\" <djbluhm@mtu.edu>\; \"Adam Gib
+ son\" <aegibson@mtu.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following meeting has been 
+ modified:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><
+ td>BA2300 homework time! </td></tr>\n<tr><th align=left>Organizer:</th><td>\
+ "Burcin Tolu\" &lt\;btolu@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table bor
+ der='0'>\n<tr><th align=left>Location:</th><td>Library Student Room 114 [MOD
+ IFIED]</td></tr>\n<tr><th align=left>Resources:</th><td>Library Student Room
+  114 (Building: Library \, Room: 114) [MODIFIED]</td></tr>\n<tr><th align=le
+ ft>Time:</th><td>Wednesday\, October 27\, 2010\, 3:00:00 PM - 5:00:00 PM GMT
+  -05:00 US/Canada Eastern\n </td></tr></table>\n<p>\n<table border='0'>\n<tr
+ ><th align=left>Invitees:</th><td>\"Kristina Kotonika\" <kkotonik@mtu.edu>\;
+  \"Dan Bluhm\" <djbluhm@mtu.edu>\; \"Adam Gibson\" <aegibson@mtu.edu> </td><
+ /tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='font-family:Aria
+ l\; font-size: 12pt\; color: #000099\;'>\n</div></body></html>
+LOCATION:Library Student Room 114
+ATTENDEE;CN=Kristina Kotonika;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSV
+ P=TRUE:mailto:kkotonik@mtu.edu
+ATTENDEE;CN=Dan Bluhm;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:m
+ ailto:djbluhm@mtu.edu
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Library Student Room 114;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PA
+ RTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:library-114-rm@mtu.edu
+ORGANIZER;CN=Burcin Tolu:mailto:btolu@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101027T150000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101027T170000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20101025T182021Z
+SEQUENCE:1
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bca30afd-f7f8-4dd7-b83e-b873f93be82a
+SUMMARY:IS/IT
+DESCRIPTION:The following is a new meeting request:\n\nSubject: IS/IT \nOrga
+ nizer: \"Daniel Eskola\" <deeskola@mtu.edu> \n\nLocation: Library Staff Only
+  201 \nResources: Library Staff Only 201 (Building: Library\, Room: 201) \nT
+ ime: Thursday\, December 9\, 2010\, 6:00:00 PM - 8:30:00 PM GMT -05:00 US/Ca
+ nada Eastern\n \nInvitees: \"jrcowlin\" <jrcowlin@mtu.edu>\; \"Adam Gibson\"
+  <aegibson@mtu.edu>\; \"Joe Giddings\" <jlgiddin@mtu.edu> \n\n*~*~*~*~*~*~*~
+ *~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>IS/IT </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Daniel Eskola\" 
+ &lt\;deeskola@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table border='0'>\n<t
+ r><th align=left>Location:</th><td>Library Staff Only 201 </td></tr>\n<tr><t
+ h align=left>Resources:</th><td>Library Staff Only 201 (Building: Library\, 
+ Room: 201) </td></tr>\n<tr><th align=left>Time:</th><td>Thursday\, December 
+ 9\, 2010\, 6:00:00 PM - 8:30:00 PM GMT -05:00 US/Canada Eastern\n </td></tr>
+ </table>\n<p>\n<table border='0'>\n<tr><th align=left>Invitees:</th><td>\"jr
+ cowlin\" <jrcowlin@mtu.edu>\; \"Adam Gibson\" <aegibson@mtu.edu>\; \"Joe Gid
+ dings\" <jlgiddin@mtu.edu> </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div
+ ><br></body></html>
+LOCATION:Library Staff Only 201
+ATTENDEE;CN=jrcowlin;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:ma
+ ilto:jrcowlin@mtu.edu
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Joe Giddings;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:jlgiddin@mtu.edu
+ATTENDEE;CN=Library Staff Only 201;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PART
+ STAT=NEEDS-ACTION;RSVP=TRUE:mailto:library-201-rm@mtu.edu
+ORGANIZER;CN=Daniel Eskola:mailto:deeskola@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101209T180000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101209T203000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20101209T015749Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:bf938487-9039-4565-ab92-5d43eb96098d
+SUMMARY:it/is
+DESCRIPTION:The following is a new meeting request:\n\nSubject: it/is \nOrga
+ nizer: \"Daniel Eskola\" <deeskola@mtu.edu> \n\nLocation: Library Student Ro
+ om 114 \nResources: Library Student Room 114 (Building: Library \, Room: 114
+ ) \nTime: Thursday\, December 9\, 2010\, 6:15:00 PM - 8:00:00 PM GMT -05:00 
+ US/Canada Eastern\n \nInvitees: \"Adam Gibson\" <aegibson@mtu.edu>\; \"Joe G
+ iddings\" <jlgiddin@mtu.edu>\; \"jrcowlin\" <jrcowlin@mtu.edu> \n\n*~*~*~*~*
+ ~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>it/is </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Daniel Eskola\" 
+ &lt\;deeskola@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table border='0'>\n<t
+ r><th align=left>Location:</th><td>Library Student Room 114 </td></tr>\n<tr>
+ <th align=left>Resources:</th><td>Library Student Room 114 (Building: Librar
+ y \, Room: 114) </td></tr>\n<tr><th align=left>Time:</th><td>Thursday\, Dece
+ mber 9\, 2010\, 6:15:00 PM - 8:00:00 PM GMT -05:00 US/Canada Eastern\n </td>
+ </tr></table>\n<p>\n<table border='0'>\n<tr><th align=left>Invitees:</th><td
+ >\"Adam Gibson\" <aegibson@mtu.edu>\; \"Joe Giddings\" <jlgiddin@mtu.edu>\; 
+ \"jrcowlin\" <jrcowlin@mtu.edu> </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*
+ </div><br></body></html>
+LOCATION:Library Student Room 114
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=Joe Giddings;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:jlgiddin@mtu.edu
+ATTENDEE;CN=jrcowlin;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:ma
+ ilto:jrcowlin@mtu.edu
+ATTENDEE;CN=Library Student Room 114;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PA
+ RTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:library-114-rm@mtu.edu
+ORGANIZER;CN=Daniel Eskola:mailto:deeskola@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101209T181500
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20101209T200000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20101209T020352Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d83d5048-1d24-4905-a7c7-af612c1be2e0
+SUMMARY:Work on Undergrad Expo
+LOCATION:ITO Lab
+ATTENDEE;CN=mekelly@mtu.edu;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=
+ NEEDS-ACTION;RSVP=TRUE;X-NUM-GUESTS=0:mailto:mekelly@mtu.edu
+ATTENDEE;CN=sathorpe@mtu.edu;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT
+ =NEEDS-ACTION;RSVP=TRUE;X-NUM-GUESTS=0:mailto:sathorpe@mtu.edu
+ATTENDEE;CN=aegibson@mtu.edu;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT
+ =ACCEPTED;RSVP=TRUE;X-NUM-GUESTS=0:mailto:aegibson@mtu.edu
+CATEGORIES:ITOxygen
+ORGANIZER;CN=Calendar:mailto:3hi29eh2f4bngbt0a6nkjt0srs@group.calendar.googl
+ e.com
+DTSTART;TZID="America/New_York":20110329T150000
+DTEND;TZID="America/New_York":20110329T170000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20110323T212207Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1da208ce-c7d8-46fd-b0bd-a205a158a167
+SUMMARY:BA 3220 Group Meeting
+DESCRIPTION:The following is a new meeting request:\n\nSubject: BA 3220 Grou
+ p Meeting \nOrganizer: \"Christopher Capo\" <cacapo@mtu.edu> \n\nLocation: L
+ ibrary Student Room 115 \nResources: Library Student Room 115 (Building: Lib
+ rary \, Room: 115) \nTime: Tuesday\, April 19\, 2011\, 12:00:00 PM - 2:00:00
+  PM GMT -05:00 US/Canada Eastern\n \nInvitees: \"Ashley Juntunen\" <aljuntun
+ @mtu.edu>\; \"Nicholas Lyon\" <nlyon@mtu.edu>\; \"Adam Gibson\" <aegibson@mt
+ u.edu>\; \"jecarter\" <jecarter@mtu.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>BA 3220 Group Meeting </td></tr>\n<tr><th align=left>Organizer:</th><td>\"
+ Christopher Capo\" &lt\;cacapo@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<tabl
+ e border='0'>\n<tr><th align=left>Location:</th><td>Library Student Room 115
+  </td></tr>\n<tr><th align=left>Resources:</th><td>Library Student Room 115 
+ (Building: Library \, Room: 115) </td></tr>\n<tr><th align=left>Time:</th><t
+ d>Tuesday\, April 19\, 2011\, 12:00:00 PM - 2:00:00 PM GMT -05:00 US/Canada 
+ Eastern\n </td></tr></table>\n<p>\n<table border='0'>\n<tr><th align=left>In
+ vitees:</th><td>\"Ashley Juntunen\" <aljuntun@mtu.edu>\; \"Nicholas Lyon\" <
+ nlyon@mtu.edu>\; \"Adam Gibson\" <aegibson@mtu.edu>\; \"jecarter\" <jecarter
+ @mtu.edu> </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='
+ font-family:Times New Roman\; font-size: 12pt\; color: #000000\;'><br></div>
+ </body></html>
+LOCATION:Library Student Room 115
+ATTENDEE;CN=Ashley Juntunen;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:aljuntun@mtu.edu
+ATTENDEE;CN=Nicholas Lyon;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:nlyon@mtu.edu
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+ATTENDEE;CN=jecarter;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:ma
+ ilto:jecarter@mtu.edu
+ATTENDEE;CN=Library Student Room 115;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PA
+ RTSTAT=NEEDS-ACTION;RSVP=TRUE:mailto:library-115-rm@mtu.edu
+ORGANIZER;CN=Christopher Capo:mailto:cacapo@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20110419T120000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20110419T140000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20110419T045045Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:12def7f8-6cd4-490b-a475-53de05688d11
+SUMMARY:Group Meeting
+DESCRIPTION:The following meeting has been modified:\n\nSubject: Group Meeti
+ ng \nOrganizer: \"Christopher Capo\" <cacapo@mtu.edu> \n\nResources: library
+ -112-rm@mtu.edu \nTime: Friday\, April 22\, 2011\, 10:00:00 AM - 12:00:00 PM
+  GMT -05:00 US/Canada Eastern [MODIFIED]\n \nInvitees: \"aegibson\" <aegibso
+ n@mtu.edu>\; \"jecarter\" <jecarter@mtu.edu>\; \"nlyon\" <nlyon@mtu.edu>\; \
+ "aljuntun\" <aljuntun@mtu.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following meeting has been 
+ modified:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><
+ td>Group Meeting </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Christo
+ pher Capo\" &lt\;cacapo@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table borde
+ r='0'>\n<tr><th align=left>Resources:</th><td>library-112-rm@mtu.edu </td></
+ tr>\n<tr><th align=left>Time:</th><td>Friday\, April 22\, 2011\, 10:00:00 AM
+  - 12:00:00 PM GMT -05:00 US/Canada Eastern [MODIFIED]\n </td></tr></table>\
+ n<p>\n<table border='0'>\n<tr><th align=left>Invitees:</th><td>\"aegibson\" 
+ <aegibson@mtu.edu>\; \"jecarter\" <jecarter@mtu.edu>\; \"nlyon\" <nlyon@mtu.
+ edu>\; \"aljuntun\" <aljuntun@mtu.edu> </td></tr></table>\n<div>*~*~*~*~*~*~
+ *~*~*~*</div><br><div style='font-family:Times New Roman\; font-size: 12pt\;
+  color: #000000\;'>\n</div></body></html>
+LOCATION:Library Student Room 112
+ATTENDEE;CN=aegibson;ROLE=REQ-PARTICIPANT;PARTSTAT=DECLINED;RSVP=TRUE:mailto
+ :aegibson@mtu.edu
+ATTENDEE;CN=jecarter;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto
+ :jecarter@mtu.edu
+ATTENDEE;CN=nlyon;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:mailt
+ o:nlyon@mtu.edu
+ATTENDEE;CN=aljuntun;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE:ma
+ ilto:aljuntun@mtu.edu
+ATTENDEE;CUTYPE=RESOURCE;ROLE=NON-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:ma
+ ilto:library-112-rm@mtu.edu
+ORGANIZER;CN=Christopher Capo:mailto:cacapo@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20110422T100000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20110422T120000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20110422T020040Z
+SEQUENCE:1
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:040000008200E00074C5B7101A82E00800000000C01A9373B63FCC010000000000000000
+ 1000000073DB702637D50945BB093B6816E4B030
+SUMMARY:Rackspace Partner Portal Demonstration
+DESCRIPTION:When: Thursday\, July 14\, 2011 3:30 PM-4:00 PM (UTC-06:00) Cent
+ ral Time (US & Canada).\nWhere: Webex Online - Please use the link below\n\n
+ Note: The GMT offset above does not reflect daylight saving time adjustments
+ .\n\n*~*~*~*~*~*~*~*~*~*\n\nDON’T FORGET – Today is the Partner Portal Walkt
+ hrough!!!\n\nPlease join me\, I look forward to seeing you there.\n\n\n\nHel
+ lo New Members of the Rackspace Partner Program\,\n\n\nI am holding a Webex 
+ this Thursday to provide new partners with a tour and explanation of the Rac
+ kspace Partner Portal and I would like to invite you to join me. This is not
+  mandatory and if you are not available this Thursday please let me know and
+  I will include you in the next session or if you feel comfortable with the 
+ website you can let me know that too and I will be happy to answer your spec
+ ific questions.\n\nThank you for your time and I look forward to speaking wi
+ th you soon.\n\n\nTopic:  Partner Portal Tour for New Partners\nDate:   Thur
+ sday\, July 14\, 2011\nTime:   3:30 pm\, Central Daylight Time (Chicago\, GM
+ T-05:00)\nMeeting Number: 794 916 098\nMeeting Password:       Rack123\n\n\n
+ To start the online meeting\n\n   1.   Go to https://rackspace.webex.com/rac
+ kspace/j.php?ED=151983187&UID=493249192&PW=NODE3M2E0ZjQz&RT=MiM3\n   2.   If
+  you are not logged in\, log in to your account.\n\n\n\nAudio conference inf
+ ormation\n\nPlease call into this conference bridge:\n   Conference Bridge: 
+  1-888-450-5996\n   Passcode:  141406\n\n\nRhonda Weiss I Partner Readiness 
+ Manager I Rackspace\nToll Free: (800) 961-2888 x5215 I Direct: (210) 312-521
+ 5\nMobile: (210) 478-9361 I Fax: (210) 312-5045 | ICQ: 645930182\nEmail: rho
+ nda.weiss@rackspace.com<mailto:rhonda.weiss@rackspace.com> I on the web: www
+ .rackspace.com<http://www.rackspace.com/>\n\nCould your business use a few m
+ ore referrals? Ask me about a partnership with Rackspace!\n\n\n\nTo check wh
+ ether you have the appropriate players installed for UCF (Universal Communic
+ ations Format) rich media files\, go to https://rackspace.webex.com/rackspac
+ e/systemdiagnosis.php\n\n\n\n\n\n\n
+LOCATION:Webex Online - Please use the link below
+ATTENDEE;CN=Rhonda Weiss;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRU
+ E:mailto:rhonda.weiss@RACKSPACE.COM
+ATTENDEE;CN=Rana McDonald;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:rana.mcdonald@rackspace.com
+ATTENDEE;CN='Martin Paredes';ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP
+ =TRUE:mailto:martin.paredes@cognent.com
+ATTENDEE;CN=Scott Santarlas;ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE:mailto:scotts@waytek.com
+ATTENDEE;CN=Rick Kieltyka;ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TR
+ UE:mailto:RKieltyka@rktss.com
+ATTENDEE;PARTSTAT=ACCEPTED:mailto:aegibson@mtu.edu
+PRIORITY:5
+X-MICROSOFT-CDO-APPT-SEQUENCE:3
+X-MICROSOFT-CDO-OWNERAPPTID:-527730725
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+ORGANIZER;CN=Rhonda Weiss:mailto:rhonda.weiss@RACKSPACE.COM
+DTSTART;TZID="Central Standard Time":20110714T153000
+DTEND;TZID="Central Standard Time":20110714T160000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20110714T140830Z
+SEQUENCE:3
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:040000008200E00074C5B7101A82E00800000000E036E2343745CC010000000000000000
+ 100000004A3731AE1A9A6E4A9DADBBF913329602
+SUMMARY:Rackspace Partner Portal Demonstration
+DESCRIPTION:When: Thursday\, July 21\, 2011 3:30 PM-4:00 PM (UTC-06:00) Cent
+ ral Time (US & Canada).\nWhere: Webex Online - Please use the link below\n\n
+ Note: The GMT offset above does not reflect daylight saving time adjustments
+ .\n\n*~*~*~*~*~*~*~*~*~*\n\nHello New Members of the Rackspace Partner Progr
+ am\,\n\n\nI am holding a Webex this Thursday to provide new partners with a 
+ tour and explanation of the Rackspace Partner Portal and I would like to inv
+ ite you to join me. This is not mandatory and if you are not available this 
+ Thursday please let me know and I will include you in the next session or if
+  you feel comfortable with the website you can let me know that too and I wi
+ ll be happy to answer your specific questions.\n\nThank you for your time an
+ d I look forward to speaking with you soon.\n\n\nTopic:  Partner Portal Tour
+ \nDate:   Every Thursday\, from Thursday\, July 21\, 2011 to Thursday\, July
+  5\, 2012\nTime:   3:30 pm\, Central Daylight Time (Chicago\, GMT-05:00)\nMe
+ eting Number: 794 916 098\nMeeting Password:       Rack123\n\n\n\nTo start t
+ he online meeting\n\n   1.   Go to https://rackspace.webex.com/rackspace/j.p
+ hp?ED=151983187&UID=493249192&PW=NODE3M2E0ZjQz&RT=MiM3\n   2.   If you are n
+ ot logged in\, log in to your account.\n\n\n\nAudio conference information\n
+ \nPlease call into this conference bridge:\n   Conference Bridge:  1-888-450
+ -5996\n   Passcode:  141406\n\n\nTo check whether you have the appropriate p
+ layers installed for UCF (Universal Communications Format) rich media files\
+ , go to https://rackspace.webex.com/rackspace/systemdiagnosis.php.\n\n\nIMPO
+ RTANT NOTICE: This WebEx service includes a feature that allows audio and an
+ y documents and other materials exchanged or viewed during the session to be
+  recorded. You should inform all meeting attendees prior to recording if you
+  intend to record the meeting. Please note that any such recordings may be s
+ ubject to discovery in the event of litigation.\n\nThank You so much for you
+ r time and I look forward to speaking with you soon\,\n\nRhonda Weiss I Part
+ ner Readiness Manager I Rackspace\nToll Free: (800) 961-2888 x5215 I Direct:
+  (210) 312-5215\nMobile: (210) 478-9361 I Fax: (210) 312-5045 | ICQ: 6459301
+ 82\nEmail: rhonda.weiss@rackspace.com<mailto:lynn.capitano@rackspace.com> I 
+ on the web: www.rackspace.com<http://www.rackspace.com/>\n\nCould your busin
+ ess use a few more referrals? Ask me about a partnership with Rackspace!\n\n
+ \n
+LOCATION:Webex Online - Please use the link below
+PRIORITY:5
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-OWNERAPPTID:-869107749
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+ORGANIZER;CN=Rhonda Weiss:mailto:rhonda.weiss@RACKSPACE.COM
+DTSTART;TZID="Central Standard Time":20110721T153000
+DTEND;TZID="Central Standard Time":20110721T160000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20110718T154109Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:040000008200E00074C5B7101A82E00800000000F022D0C60B3BCC010000000000000000
+ 100000002FF4E8D83CB8264BB38D85319EB0720A
+SUMMARY:Rackspace Partner Portal Demonstration
+DESCRIPTION:When: Friday\, July 08\, 2011 10:30 AM-11:00 AM (UTC-06:00) Cent
+ ral Time (US & Canada).\nWhere: Webex Online\n\nNote: The GMT offset above d
+ oes not reflect daylight saving time adjustments.\n\n*~*~*~*~*~*~*~*~*~*\n\n
+ DON’T FORGET – Today is the Partner Portal Walkthrough!!!\n\nPlease join me\
+ , I look forward to seeing you there.\n\n\nHello New Members of the Rackspac
+ e Partner Program\,\n\n\nI am holding a Webex this Friday to provide new par
+ tners with a tour and explanation of the Rackspace Partner Portal and I woul
+ d like to invite you to join me. This is not mandatory and if you are not av
+ ailable this Friday please let me know and I will include you in the next se
+ ssion or if you feel comfortable with the website you can let me know that t
+ oo and I will be happy to answer your specific questions.\n\nThank you for y
+ our time and I look forward to speaking with you soon.\n\n\nTopic:  Partner 
+ Portal Tour for New Partners\nDate:   Friday\, July 8\, 2011\nTime:   10:30 
+ am\, Central Daylight Time (Chicago\, GMT-05:00)\nMeeting Number: 794 916 09
+ 8\nMeeting Password:       Rack123\n\n\nTo start the online meeting\n\n   1.
+    Go to https://rackspace.webex.com/rackspace/j.php?ED=151983187&UID=493249
+ 192&PW=NODE3M2E0ZjQz&RT=MiM3\n   2.   If you are not logged in\, log in to y
+ our account.\n\n\n\nAudio conference information\n\nPlease call into this co
+ nference bridge:\n   Conference Bridge:  1-888-450-5996\n   Passcode:  14140
+ 6\n\n\nRhonda Weiss I Partner Readiness Manager I Rackspace\nToll Free: (800
+ ) 961-2888 x5215 I Direct: (210) 312-5215\nMobile: (210) 478-9361 I Fax: (21
+ 0) 312-5045 | ICQ: 645930182\nEmail: rhonda.weiss@rackspace.com<mailto:rhond
+ a.weiss@rackspace.com> I on the web: www.rackspace.com<http://www.rackspace.
+ com/>\n\nCould your business use a few more referrals? Ask me about a partne
+ rship with Rackspace!\n\n\n\nTo check whether you have the appropriate playe
+ rs installed for UCF (Universal Communications Format) rich media files\, go
+  to https://rackspace.webex.com/rackspace/systemdiagnosis.php\n\n\n\n\n\n
+LOCATION:Webex Online
+ATTENDEE;CN='agibson@clevercloudcomputing.com';ROLE=OPT-PARTICIPANT;PARTSTAT
+ =NEEDS-ACTION;RSVP=TRUE:mailto:agibson@clevercloudcomputing.com
+PRIORITY:5
+X-MICROSOFT-CDO-APPT-SEQUENCE:3
+X-MICROSOFT-CDO-OWNERAPPTID:-1297778725
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+ORGANIZER;CN=Rhonda Weiss:mailto:rhonda.weiss@RACKSPACE.COM
+DTSTART;TZID="Central Standard Time":20110708T103000
+DTEND;TZID="Central Standard Time":20110708T110000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20110708T145635Z
+SEQUENCE:3
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0b746adb-bc06-4dae-a25a-599227164d64
+SUMMARY:Shu Wei Goh
+DESCRIPTION:The following is a new meeting request:\n\nSubject: Shu Wei Goh 
+ \nOrganizer: \"Jeffery Kangas\" <jakangas@mtu.edu> \n\nLocation: Admin Build
+ ing Room 220 \nTime: Thursday\, September 1\, 2011\, 3:00:00 PM - 4:00:00 PM
+  GMT -05:00 US/Canada Eastern\n \nInvitees: \"Shu Wei Goh\" <sgoh@mtu.edu> \
+ n\n*~*~*~*~*~*~*~*~*~*\n\nDiscuss plans for hiring Interns at Clever Cloud C
+ omputing \n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><h3>The following is a new meeting 
+ request:</h3>\n\n<p>\n<table border='0'>\n<tr><th align=left>Subject:</th><t
+ d>Shu Wei Goh </td></tr>\n<tr><th align=left>Organizer:</th><td>\"Jeffery Ka
+ ngas\" &lt\;jakangas@mtu.edu&gt\; </td></tr>\n</table>\n<p>\n<table border='
+ 0'>\n<tr><th align=left>Location:</th><td>Admin Building Room 220 </td></tr>
+ \n<tr><th align=left>Time:</th><td>Thursday\, September 1\, 2011\, 3:00:00 P
+ M - 4:00:00 PM GMT -05:00 US/Canada Eastern\n </td></tr></table>\n<p>\n<tabl
+ e border='0'>\n<tr><th align=left>Invitees:</th><td>\"Shu Wei Goh\" <sgoh@mt
+ u.edu> </td></tr></table>\n<div>*~*~*~*~*~*~*~*~*~*</div><br><div style='fon
+ t-family:Times New Roman\; font-size: 12pt\; color: #000000\;'>Discuss plans
+  for hiring Interns at Clever Cloud Computing<br></div></body></html>
+LOCATION:Admin Building Room 220
+ATTENDEE;CN=Shu Wei Goh;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:sgoh@mtu.edu
+ORGANIZER;CN=Jeffery Kangas:mailto:jakangas@mtu.edu
+DTSTART;TZID="(GMT-05.00) Eastern Time (US & Canada)":20110901T150000
+DTEND;TZID="(GMT-05.00) Eastern Time (US & Canada)":20110901T160000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20110829T140242Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:393450AE-8D70-4616-BF6D-86B6C28B2E37
+SUMMARY:Clever Cloud Breakfast
+DESCRIPTION:When: Friday\, October 21\, 2011 7:30 AM-8:30 AM. (UTC-05:00) Ea
+ stern Time (US & Canada)\nWhere: Suomi Restaurant\n\n*~*~*~*~*~*~*~*~*~*\n\n
+ \n
+LOCATION:Suomi Restaurant
+ATTENDEE;CN=Phil Musser;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE
+ :mailto:pmusser@kedabiz.com
+ATTENDEE;CN=Adam Gibson;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mai
+ lto:aegibson@mtu.edu
+PRIORITY:5
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-OWNERAPPTID:2109384186
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+ORGANIZER;CN=Jonathan Leinonen:mailto:jleinonen@mtecsz.com
+DTSTART;TZID="Eastern Standard Time":20111021T073000
+DTEND;TZID="Eastern Standard Time":20111021T083000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20111020T122925Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:89E2C26C473E410F956D03D754E4D5D300000000000000000000000000000000
+SUMMARY:Cloud computing
+LOCATION:Md
+ATTENDEE;CN=Adam Gibson;CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto
+ :aegibson@mtu.edu
+ORGANIZER;CN=karyno@marketingdepartmentinc.com:mailto:karyno@marketingdepart
+ mentinc.com
+DTSTART;TZID="America/Detroit":20111101T133000
+DTEND;TZID="America/Detroit":20111101T143000
+STATUS:CONFIRMED
+CLASS:PUBLIC
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+TRANSP:OPAQUE
+X-MICROSOFT-DISALLOW-COUNTER:TRUE
+DTSTAMP:20111028T181833Z
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT15M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

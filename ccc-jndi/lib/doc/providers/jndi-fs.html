@@ -1,0 +1,436 @@
+<HTML>
+<HEAD>
+<title> 
+JNDI/File System Service Provider
+</title>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT=#000000 LINK=#0000ff VLINK=#000077
+ALINK=#ff0000>
+
+<hr SIZE=3 NOSHADE WIDTH="100%">
+<center>
+<h1>
+File System Service Provider for the
+<br>
+Java Naming and Directory Interface<font size=4><sup>TM</sup></font>
+(JNDI)
+</h1>
+</center>
+<hr SIZE=3 NOSHADE WIDTH="100%">
+<P><FONT SIZE=-1>Please send feedback to 
+<a href="mailto:jndi@java.sun.com">jndi@java.sun.com</a></FONT>
+
+<P>
+<P><I>Table of Contents</I>
+<UL>
+<LI>
+<A HREF="#INTRO">Introduction</A></LI>
+
+<LI> 
+<A HREF="#CONF">Conformance</A></LI>
+
+<LI>
+<A HREF="#PROP">Environment Properties</A></LI>
+
+<LI>
+<A HREF="#TYPE">Types of Objects and how Objects are Named</A></LI>
+
+<LI>
+<A HREF="#API">API Mapping</A></LI>
+
+</UL>
+<P>
+<HR>
+<P> 
+
+<A NAME="INTRO">
+<H2>Introduction</H2>
+<p>
+
+JNDI offers a universal naming API and a standardized way to store
+objects in a namespace. The file system service provider supports
+these features for a local or networked file system. Its purpose 
+is two-fold:
+<ul>
+<li> Allow clients to traverse the file system namespace using JNDI's 
+   context interface.</li>
+<li> Allow clients to store Java objects in the file system.</li>
+</ul>
+These two separate functions are actually handled by two different
+providers (i.e., classes). The first class handles accessing the file
+system and can be used independently of the second. The second class
+handles storage of Java objects and is used in conjunction with the
+first (i.e., it is a subclass of the first).
+<p>
+This document describes the features of the file system service provider
+and contains details of how JNDI is mapped to the file system.
+<hr>
+<p> 
+<A NAME="CONF">
+<H2>Conformance</H2>
+<p>
+
+The file system service provider accesses the file system using the
+<tt>java.io.File</tt> class. The file system can be local or
+networked--the only requirement is that it is accessible using the
+<tt>java.io.File</tt> class.  Use of the <tt>java.io.File</tt> class makes
+the service provider platform independent. Therefore, the file system
+service provider conforms to the file system of whatever platform it is
+executing on.
+<p>
+The file system service provider treats each directory as a context
+and each file as a <tt>java.io.File</tt> object stored in the context representing
+the file's parent directory.
+<p>
+Java objects can also be stored in file system. Each object is
+stored in an invisible file as a set of properties that the service
+provider uses to re-construct the object. The file has the same
+format used by <tt>java.util.Properties</tt>. Although the file can be
+viewed and edited, the properties within have little meaning outside of
+the service provider.
+<hr>
+<p>
+<A NAME="PROP">
+<H2>Environment Properties</H2>
+<p>
+   
+The following JNDI environment properties are relevant to the file
+system service provider. See the 
+<a href=http://java.sun.com//products/jndi/1.2/javadoc/javax/naming/InitialContext.html#ENVIRONMENT>JNDI documentation</a>
+for a 
+description of how properties are initialized using the environment 
+properties, system properties, applet parameters, and resource files.
+
+<p>
+
+<b><pre>java.naming.factory.initial</pre></b>
+
+<blockquote>
+
+    This environment property is used to select the file system 
+    service provider. It's not actually used by the provider itself. 
+    It specifies the class name of the initial context factory for 
+    the provider. It can have one of two values. The first choice
+    names the class responsible for file system access.
+<p>
+    For example:
+<p>
+<blockquote>
+<pre>
+env.put(Context.INITIAL_CONTEXT_FACTORY, 
+    "com.sun.jndi.fscontext.FSContextFactory");
+</pre>
+</blockquote>
+<p>
+    The second choice names the class--a subclass of <tt>FSContextFactory</tt>--which 
+    adds the ability to lookup and store Java objects in the file system.
+<p>
+    For example:
+<p>
+<blockquote>
+<pre>
+env.put(Context.INITIAL_CONTEXT_FACTORY, 
+    "com.sun.jndi.fscontext.RefFSContextFactory");
+</pre>
+</blockquote>
+<p>
+    This environment property must be set if you are using the file system
+    provider for the initial context. The only exception is if you supply
+    only URLs to the initial context, in which case, you don't need
+    to specify this property. See the 
+    <a href=#TYPE>Types of Objects and how Objects are Named</a> section
+    for details.
+   
+</blockquote>
+   
+<b><pre>java.naming.provider.url</pre></b>
+    
+<blockquote>
+    
+    Specifies the file to be used as the root context. It must be a 
+    file URL representing a directory in the file system.
+<p>
+    For example:
+<p>
+<blockquote>
+<pre>
+file:///home/kafka
+</pre>
+</blockquote>
+<p>
+    this URL will cause the provider to use the directory named <em>kafka</em>
+    in the directory <em>home</em> in the root directory as the base context. 
+    Performing a <tt>list()</tt> on the initial context would be equivalent to 
+    typing the UNIX command <em>ls</em> in the directory <em>/home/kafka</em> directory.
+    If this property is not set, it defaults to the root of the local file system.
+</blockquote>
+
+<b><pre>java.naming.factory.state</pre></b>
+
+<blockquote>
+
+    A colon-separated list of the fully qualified class names
+    of state factory classes used to get an object's state for storing
+    given the object itself. You can use this mechanism to transform
+    an object into forms that the files system service provider supports.
+    The file system service provider supports storing <tt>Reference</tt> 
+    and <tt>Referenceable</tt> objects. 
+    See 
+<a href="http://java.sun.com/products/jndi/1.2/javadoc/javax/naming/spi/NamingManager.html#getStateToBind(java.lang.Object, javax.naming.Name, javax.naming.Context, java.util.Hashtable)">
+<tt>javax.naming.spi.NamingManager.getStateToBind()</tt></a> for details.
+</blockquote>
+
+<b><pre>java.naming.factory.object</pre></b>
+
+<blockquote>
+
+    A colon-separated list of the fully qualified class names
+    of object factory classes for transforming objects read from the file system.
+    You can use this mechanism to transform an object into forms expected
+    by the application. See
+<a href="http://java.sun.com/products/jndi/1.2/javadoc/javax/naming/spi/NamingManager.html#getObjectInstance(java.lang.Object, javax.naming.Name, javax.naming.Context, java.util.Hashtable)">
+<tt>javax.naming.spi.NamingManager.getObjectInstance()</tt></a> for details.
+</blockquote>
+
+<hr>
+<p>
+<A NAME="TYPE">
+<H2>Types of Objects and how Objects are Named</H2>
+<p>
+
+<b>Names</b>
+<p>
+
+Contexts and objects are named using the filename syntax of the local or
+networked file system of the underlying platform. When naming objects,
+use either the <tt>javax.naming.Name</tt> class
+or construct strings with <tt>java.io.File.separator</tt>.  
+This will ensure that the code will
+work on any file system, regardless of its filename syntax.
+<p>
+A context in the file system service provider is simply a
+directory. Calling <tt>list()</tt> on a context is equivalent to issuing
+the UNIX command <em>ls</em> on the corresponding directory. The initial context
+is the directory specified in the
+<tt>java.naming.provider.url</tt> property. Files are represented as objects of
+class <tt>java.io.File</tt> bound to the context representing the file's
+parent directory.  All objects are named relative to the context on which
+you make a call.
+<p>
+For example, if the local file system looks like this:
+<p>
+<pre>
+                             (root)
+                                |
+                              home
+                                |
+                              kafka
+                                |
+                      ---------------------
+                      |                   |
+                metamorphosis          castle
+                                          |
+                                  -----------------
+                                  |       |       |
+                                 ch1     ch2     ch3
+</pre>
+<p>
+Then, an initial context could be created using the following code:
+<p>
+<blockquote>
+<pre>
+Hashtable env = new Hashtable(11);
+env.put(Context.INITIAL_CONTEXT_FACTORY,
+        "com.sun.jndi.fscontext.RefFSContextFactory");
+env.put(Context.PROVIDER_URL,
+        "file:///home/kafka");
+Context initCtx = new InitialContext(env);
+</pre>
+</blockquote>
+<p>
+The following call on the initial context would cause the context
+representing "metamorphosis" to be returned:
+<p>
+<blockquote>
+<pre>
+Context ctx = initCtx.lookup("metamorphosis");
+</pre>
+</blockquote>
+<p>
+The following call on the initial context would return the <tt>File</tt> object
+representing <em>ch1</em> to be returned:
+<p>
+<blockquote>
+<pre>
+Context ctx = initCtx.lookup("castle" + File.separator + "ch1");
+</pre>
+</blockquote>
+<p>
+Java objects can be stored in the file system under the following 
+conditions:
+<ul>
+<li>The initial factory is <tt>RefFSContextFactory</tt> (not
+    <tt>FSContextFactory</tt>)</li>
+<li>The object is of type <tt>
+<a href=http://java.sun.com/products/jndi/1.2/javadoc/javax/naming/Reference.html>java.naming.Reference</a></tt> or implements
+<tt>
+<a href=http://java.sun.com/products/jndi/1.2/javadoc/javax/naming/Referenceable.html>java.naming.Referenceable</a>
+</tt>
+</ul>
+Here is an example of how to store a <tt>Referenceable</tt> object:
+<blockquote>
+<pre>
+class MyObject implements Referenceable {
+	...
+}
+MyObject obj = new MyObject();
+initCtx.bind("metamorphosis/myBoundObject", obj);
+</pre>
+</blockquote>
+<p>
+To retrieve an object, the object factory listed in the <tt>Reference</tt>
+must be made available, for example, in the classpath of the application.
+<p>
+<blockquote>
+<pre>
+MyObject obj = initCtx.lookup("metamorphosis/myBoundObject");
+</pre>
+</blockquote>
+<p>
+<b>URLS</b>
+<p>
+You can supply a "file" URL to the initial context. For example,
+<p>
+<blockquote>
+<pre>
+InitialContext ictx = new InitialContext();
+Object helloRef = ictx.lookup("file:/c:/tmp/somefile");
+</pre>
+</blockquote>
+<hr>
+<p>
+<A NAME="API">
+<H2>API Mapping</H2>
+<p>
+
+This section describes how the various JNDI calls are mapped to the
+file system.
+
+<b><pre>addToEnvironment()</pre></b>
+
+    <blockquote>
+    Adds the given property and value to the context's environment.
+    </blockquote>
+
+<b><pre>bind()</pre></b>
+
+    <blockquote>
+    Binds the given object to the named context. The object must be a
+    <tt>Reference</tt> or implement the <tt>Referenceable</tt> interface. 
+    The bound object is stored  as a set of properties in a file called 
+    <em>.bindings</em>. Its parent 
+    directory is the directory corresponding to the context in which 
+    the object is bound. This only works with <tt>RefFSContext</tt>.
+    <tt>NamingManager.getStateToBind()</tt> is called to allow the object
+    to be transformed into <tt>Reference</tt> and <tt>Referenceable</tt>
+    objects so that it can be bound.
+    </blockquote>
+    
+<b><pre>close()</pre></b>
+    
+    <blockquote>
+    Releases the context's internal data structures.
+    </blockquote>
+    
+<b><pre>composeName()</pre></b>
+    <blockquote>
+    Concatenates two names.
+    </blockquote>
+
+<b><pre>createSubcontext()</pre></b>
+    <blockquote>
+    Creates a subcontext by creating the corresponding directory in the 
+    file system.
+    </blockquote>
+
+<b><pre>destroySubcontext()</pre></b>
+    <blockquote>
+    Destroys a subcontext by deleting the corresponding directory in the 
+    file system.
+   </blockquote>
+    
+<b><pre>getEnvironment()</pre></b>
+    <blockquote>  
+    Returns the context's environment.
+    </blockquote>
+
+<b><pre>getNameInNamespace()</pre></b>
+    <blockquote>
+    Returns the absolute filename of the directory in the file system.
+    </blockquote>
+
+<b><pre>getNameParser()</pre></b>
+    <blockquote>
+    Returns a name parser for file system names.
+    </blockquote>
+    
+<b><pre>lookup()
+lookupLink()</pre></b>
+    <blockquote>
+    Returns the object named relative to the context. The object is of type
+    <tt>Context</tt> if the name refers to a directory, a <tt>File</tt> 
+    if the name refers to a file), or of an arbitrary type if that was previously 
+    bound in the file system.
+    <tt>NamingManager.getObjectInstance()</tt>
+    is called before the object is returned in case the application
+    or user has supplied object factories.
+    </blockquote>
+
+<b><pre>
+list()
+listBindings()</pre></b>
+    <blockquote>
+    Lists the contents of the named context (i.e. directory). The contents
+    will consist of other contexts (directories), files, and objects
+    previously bound to the named context.
+    <tt>NamingManager.getObjectInstance()</tt>
+    is called on the objects returned in <tt>listBindings</tt>
+    before they are returned in case the application
+    or user has supplied object factories.
+    </blockquote>
+
+<b><pre>removeFromEnvironment()</pre></b>
+    <blockquote>
+    Removes the named property from the context's environment.
+    </blockquote>
+    
+<b><pre>rebind()</pre></b>
+    <blockquote>
+    Binds the given object to the file system, overwriting any previous
+    object. If an object was previously bound to the given name, it is
+    overwritten. The supplied object must be a <tt>Reference</tt> or implement
+    the <tt>Referenceable</tt> interface. Like <tt>bind()</tt>,
+    <tt>NamingManager.getStateToBind()</tt> is called 
+    to allow the object to be transformed into <tt>Reference</tt> and
+    <tt>Referenceable</tt> objects.
+    </blockquote>
+    
+<b><pre>rename()</pre></b>
+    <blockquote>
+    Renames an object. Renaming a context or file results in a corresponding
+    change to its name in the file system. Arbitrary objects can be renamed
+    too.
+    </blockquote>
+    
+<b><pre>unbind()</pre></b>
+<blockquote>
+    Removes the given name and object from the file system.
+</blockquote>
+
+<HR SIZE=3 NOSHADE WIDTH=100%>
+<br><i>Copyright &copy; 1999 Sun Microsystems, Inc., All Rights Reserved.</i> 
+   
+</body>
+</html>
+

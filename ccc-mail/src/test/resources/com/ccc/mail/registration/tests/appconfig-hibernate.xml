@@ -1,0 +1,65 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+
+
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+
+
+
+	<!-- Session factory configuration, enables hibernate to work. -->
+	<bean id="sessionFactory" name="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- Mapped entities -->
+		<property name="annotatedClasses">
+			<list>
+				<!-- Each one of these maps to a table. <value>com.ccc.website.model.User</value> -->
+				<value>com.ccc.mail.mailinglist.model.BounceRate</value>
+				<value>com.ccc.mail.mailinglist.model.ListMessageTracking</value>
+				<value>com.ccc.mail.mailinglist.model.ListSubscribe</value>
+				<value>com.ccc.mail.mailinglist.model.MailingList</value>
+				<value>com.ccc.mail.mailinglist.model.MessageSend</value>
+				<value>com.ccc.mail.mailinglist.model.Subscriber</value>
+				<value>com.ccc.mail.mailinglist.model.UniqueMessage</value>
+				<value>com.ccc.mail.mailinglist.model.UserNameLists</value>
+
+			</list>
+		</property>
+		<property name="hibernateProperties" ref="hibernateConfigProperties" />
+
+	</bean>
+
+
+
+	<bean id="hibernateConfigProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location">
+			<value>classpath:hibernate.properties</value>
+		</property>
+	</bean>
+
+
+
+	<!-- Database access -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		depends-on="propertyPlaceHolderConfigurer">
+		<property name="driverClassName" value="${hibernate.driver}" />
+		<property name="url" value="${hibernate.url}" />
+		<property name="username" value="${hibernate.user}" />
+		<property name="password" value="${hibernate.password}" />
+	</bean>
+
+
+
+
+</beans>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	<context:component-scan base-package="com.ccc" />
+	<!-- Properties files -->
+	<bean id="propertyPlaceHolderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				
+				<value>classpath:hibernate.properties</value>
+			</list>
+		</property>
+		</bean>
+	<import resource="classpath:mailconfig.xml" />
+	<import resource="appconfig-hibernate.xml" />
+
+	<!-- <context:property-placeholder location="classpath:mail.properties" 
+		/> -->
+	<bean id="mailBox" class="com.ccc.mail.impl.DefaultMailBox">
+	</bean>
+	<bean id="mailingListService" class="com.ccc.mail.mailinglist.services.impl.MailingListServiceImpl" />
+	<bean id="mailStore" class="com.ccc.mail.store.DefaultMailStore">
+		<property name="incomingServers">
+			<list>
+				<ref bean="cccIn" />
+			</list>
+		</property>
+		<property name="outgoingServers">
+			<list>
+				<ref bean="cccOut" />
+			</list>
+		</property>
+
+
+	</bean>
+	<bean id="cccIn" class="com.ccc.mail.core.servers.Server">
+		<property name="serverType" value="imap" />
+		<property name="port" value="143" />
+		<property name="serverName" value="mail.fxservices.co.uk" />
+
+		<property name="serverAddress" value="69.175.127.170" />
+	</bean>
+
+
+
+	<bean id="cccOut" class="com.ccc.mail.core.servers.SMTPServer">
+		<property name="serverType" value="smtps" />
+		<property name="port" value="465" />
+		<property name="serverName" value="mail.fxservices.co.uk" />
+		<property name="serverAddress" value="69.175.127.170" />
+	</bean>
+
+	<bean name="mailClient"
+		class="com.ccc.mail.mailinglist.mailclient.MailingListMailClient">
+		<property name="mailStore" ref="mailStore" />
+		<property name="mailBox" ref="mailBox" />
+	</bean>
+
+
+
+	<bean id="linkGenerator" class="com.ccc.mail.registration.MailLinkGenerator">
+		<property name="url" value="http://www.clevercloudcomputing.com/forex/" />
+	</bean>
+
+	<bean id="confirmMailSender" class="com.ccc.mail.registration.ConfirmMailSender">
+		<property name="emailFrom" value="joe@fxservices.co.uk" />
+		<property name="emailContent"
+			value="We need to confirm your registration for the forex messenger before you continue.\n" />
+	</bean>
+
+</beans>
+
+

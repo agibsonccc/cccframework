@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.1.xsd
+                        http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/p
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/tx 
+                        http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	
+		
+	<!-- Configures Spring MVC -->
+	<import resource="classpath:mvc-config.xml" />
+	<import resource="classpath:security-config.xml" />
+	<import resource="classpath:appconfig-hibernate.xml" />
+
+	
+	<!-- Properties files -->
+	<bean id="mailConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>mailclient.properties</value>
+				
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Default incoming server -->
+	<bean id="cccIn" class="com.ccc.mail.core.servers.Server">
+		<property name="serverType" value="${mail.incoming.type}" />
+		<property name="port" value="${mail.incoming.port}" />
+		<property name="serverName" value="${mail.incoming.name}" />
+		<property name="serverAddress" value="${mail.incoming.address}" />
+	</bean>
+	
+	<bean id="mailClient" class="com.ccc.clevmail.mailclient.ClevMailClient" />
+	
+
+	
+	
+	<!-- Default outgoing server -->
+	<bean id="cccOut" class="com.ccc.mail.core.servers.SMTPServer">
+		<property name="serverType" value="${mail.outgoing.type}" />
+		<property name="port" value="${mail.outgoing.port}" />
+		<property name="serverName" value="${mail.outgoing.name}" />
+		<property name="serverAddress" value="${mail.outgoing.address}" />
+	</bean>
+	
+	<bean id="messageDisplayFactory" class="com.ccc.mail.core.messages.MessageDisplayFactory" />
+	
+</beans>

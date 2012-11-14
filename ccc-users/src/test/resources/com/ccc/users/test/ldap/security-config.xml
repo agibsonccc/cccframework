@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.1.xsd
+                        http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/p
+                        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Properties files -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:security.properties</value>
+				<value>classpath:ldap.properties</value>
+
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- Remember me tokens storage -->
+	<bean id="tokenRepository"
+		class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
+		<property name="createTableOnStartup" value="false" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- Votes if any ConfigAttribute.getAttribute() starts with a prefix indicating 
+		that it is a role. The -->
+	<!-- default prefix string is ROLE_, but this may be overridden to any value. 
+		It may also be set to -->
+	<!-- empty, which means that essentially any attribute will be voted on. 
+		As described further -->
+	<!-- below, the effect of an empty prefix may not be quite desirable. -->
+	<!-- Abstains from voting if no configuration attribute commences with the 
+		role prefix. Votes to -->
+	<!-- grant access if there is an exact matching -->
+	<!-- org.springframework.security.core.GrantedAuthority to a ConfigAttribute 
+		starting with the role -->
+	<!-- prefix. Votes to deny access if there is no exact matching GrantedAuthority 
+		to a -->
+	<!-- ConfigAttribute starting with the role prefix. -->
+	<!-- An empty role prefix means that the voter will vote for every ConfigAttribute. 
+		When there are -->
+	<!-- different categories of ConfigAttributes used, this will not be optimal 
+		since the voter will be -->
+	<!-- voting for attributes which do not represent roles. However, this option 
+		may be of some use -->
+	<!-- when using pre-existing role names without a prefix, and no ability 
+		exists to prefix them with -->
+	<!-- a role prefix on reading them in, such as provided for example in -->
+	<!-- org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl. -->
+	<!-- All comparisons and prefixes are case sensitive. -->
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter"
+		p:rolePrefix="ROLE_" />
+
+	<!-- Votes if a ConfigAttribute.getAttribute() of IS_AUTHENTICATED_FULLY 
+		or -->
+	<!-- IS_AUTHENTICATED_REMEMBERED or IS_AUTHENTICATED_ANONYMOUSLY is present. 
+		This list -->
+	<!-- is in order of most strict checking to least strict checking. -->
+	<!-- The current Authentication will be inspected to determine if the principal 
+		has a particular -->
+	<!-- level of authentication. The "FULLY" authenticated option means the 
+		user is authenticated -->
+	<!-- fully (i.e. -->
+	<!-- org.springframework.security.authentication.AuthenticationTrustResolver.isAnonymous -->
+	<!-- (Authentication) is false and -->
+	<!-- org.springframework.security.authentication.AuthenticationTrustResolver.isRememberMe -->
+	<!-- (Authentication) is false). The "REMEMBERED" will grant access if the 
+		principal was either -->
+	<!-- authenticated via remember-me OR is fully authenticated. The "ANONYMOUSLY" 
+		will grant -->
+	<!-- access if the principal was authenticated via remember-me, OR anonymously, 
+		OR via full -->
+	<!-- authentication. -->
+	<!-- All comparisons and prefixes are case sensitive. -->
+	<bean id="authVoter"
+		class="org.springframework.security.access.vote.AuthenticatedVoter">
+	</bean>
+
+	<!-- Simple concrete implementation of -->
+	<!-- org.springframework.security.access.AccessDecisionManager that uses 
+		a consensus-based -->
+	<!-- approach. -->
+	<!-- "Consensus" here means majority-rule (ignoring abstains) rather than 
+		unanimous agreement -->
+	<!-- (ignoring abstains). If you require unanimity, please see UnanimousBased. -->
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.ConsensusBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<property name="decisionVoters">
+			<list>
+				<ref bean="roleVoter" />
+				<ref bean="authVoter" />
+			</list>
+		</property>
+	</bean>
+
+
+
+	<!-- token-repository-ref -->
+	<!-- Configures a PersistentTokenBasedRememberMeServices but allows the 
+		use of a custom PersistentTokenRepository bean. -->
+	<!-- token-validity-seconds -->
+	<!-- Maps to the tokenValiditySeconds property of AbstractRememberMeServices. -->
+	<!-- Specifies the period in seconds for which the remember-me cookie should 
+		be valid. By -->
+	<!-- default it will be valid for 14 days. -->
+	<security:http>
+		<security:remember-me key="_spring_security_remember_me"
+			token-validity-seconds="864000" token-repository-ref="tokenRepository" />
+		<!-- login page related urls - allow anonymous access -->
+		<security:intercept-url pattern="/${app.name}/${login.page}"
+			access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<security:intercept-url pattern="/${app.name}/${admin.url}"
+			access="ROLE_ADMINISTRATOR" />
+		<security:intercept-url pattern="/${app.name}"
+			access="IS_AUTHENTICATED_REMEMBERED, IS_AUTHENTICATED_FULLY" />
+
+		<!-- login & logout redirection configuration -->
+		<security:form-login login-page="/${app.name}/${login.page}"
+			default-target-url="/${app.name}/${url.default}" />
+		<security:anonymous />
+
+		<security:logout logout-success-url="/${app.name}/${logout.success.url}" />
+	</security:http>
+
+
+	<security:ldap-user-service id="ldapUserService"
+		group-search-base="${spring.ldap.groupSearchBase}"
+		group-role-attribute="${spring.ldap.groupRoleAttribute}"
+		group-search-filter="${spring.ldap.groupSearchFilter}"
+		user-search-base="${spring.ldap.userSearchBase}" user-search-filter="${spring.ldap.userSearchFilter}" />
+
+
+	<security:authentication-manager>
+		<security:ldap-authentication-provider
+			server-ref="contextSource" group-search-base="${spring.ldap.groupSearchBase}"
+			user-search-base="${spring.ldap.userSearchBase}" user-search-filter="${spring.ldap.userSearchFilter}"
+			group-role-attribute="${spring.ldap.groupRoleAttribute}"
+			group-search-filter="${spring.ldap.groupSearchFilter}" role-prefix="${spring.ldap.rolePrefix}" />
+	</security:authentication-manager>
+
+	<security:ldap-server id="contextSource" url="${spring.ldap.url}"
+		port="389" manager-dn="${spring.ldap.managerDn}" manager-password="${spring.ldap.managerPassword}" />
+
+	<!-- LDAP Template used to execute core LDAP functionality -->
+	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
+		<constructor-arg ref="contextSource" />
+	</bean>
+
+
+
+
+
+	<!-- LDAP Security Service <bean id="securityService" class="com.xxx.LdapUserManagementServiceImpl"> 
+		<constructor-arg ref="ldapTemplate" /> </bean> -->
+
+</beans>

@@ -1,0 +1,459 @@
+dn: dc=clevercloudcomputing,dc=com
+objectClass: domain
+objectClass: top
+dc: clevercloudcomputing
+entryUUID: 61ae850b-f1e1-3985-9d25-0b5e330680f6
+
+dn: ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: organizationalUnit
+objectClass: top
+description: Authentication Groups
+ou: Groups
+entryUUID: 2066fb10-7c47-4310-9f80-b27e1a785c1d
+createTimestamp: 20110617225556Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: o=clevercloudcomputing,dc=clevercloudcomputing,dc=com
+objectClass: top
+objectClass: organization
+o: clevercloudcomputing
+entryUUID: 0db4e43c-f5ff-474c-a926-9dc9787bd84e
+createTimestamp: 20110617225627Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: o=My Fx Pips,dc=clevercloudcomputing,dc=com
+objectClass: top
+objectClass: organization
+o: My Fx Pips
+entryUUID: 21c8dd9c-8b23-4666-a7f9-9d7281a8541f
+createTimestamp: 20110617233123Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: o=IInvestor Lab,dc=clevercloudcomputing,dc=com
+objectClass: top
+objectClass: organization
+o: IInvestor Lab
+entryUUID: 3d97c912-e327-470d-b8d4-32f743b7adea
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110617233133Z
+modifyTimestamp: 20110618023347Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: mail.clevercloudcomputing.com
+entryUUID: 802bc7b7-c8f4-4c02-922c-4e93aad8598c
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110701060516Z
+modifyTimestamp: 20110711130704Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: LocalUsers
+entryUUID: 4b191e6b-ce9c-4f42-98de-7c6e278ff779
+createTimestamp: 20110701060532Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+modifyTimestamp: 20110711130734Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=confluence-administrators,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+uniqueMember: 
+uniqueMember: cn=mjgodfre,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+uniqueMember: cn=gsw85,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+uniqueMember: cn=abamra,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+cn: confluence-administrators
+entryUUID: 71144a67-4356-44f4-a709-a0d48ee972a7
+createTimestamp: 20110707182659Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+modifyTimestamp: 20110707182742Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=confluence-users,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+uniqueMember: 
+uniqueMember: cn=mjgodfre,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+uniqueMember: cn=gsw85,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+uniqueMember: cn=abamra,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+cn: confluence-users
+entryUUID: da568ccb-36a3-455e-82e3-bc7ab2a356ae
+createTimestamp: 20110707182700Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+modifyTimestamp: 20110707182742Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: ou=Contacts,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Contacts
+entryUUID: 38376dfe-fa3b-4485-808a-f4f3b5af1078
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110710094306Z
+
+dn: cn=testgroup,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: testgroup
+entryUUID: fe9b887c-8fed-4e4c-bd07-2d4830c22cfc
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110726000925Z
+modifyTimestamp: 20110801030848Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=agibson,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: javaSerializedObject
+objectClass: basicUser
+objectClass: javaObject
+objectClass: top
+javaSerializedData:: rO0ABXNyABxjb20uY2NjLnVzZXJzLmNvcmUuQmFzaWNVc2VyAAAAAAAAAAECAAtaABJjcmVkZW50aWFsc0V4cGlyZWRaAAdlbmFibGVkTAAIYmlydGhkYXl0ABJMamF2YS9sYW5nL1N0cmluZztMAAVlbWFpbHEAfgABTAAJZmlyc3ROYW1lcQB+AAFMAAZnZW5kZXJxAH4AAUwABmdyb3Vwc3EAfgABTAAIbGFzdE5hbWVxAH4AAUwACHBhc3N3b3JkcQB+AAFMAAtwaG9uZU51bWJlcnEAfgABTAAIdXNlck5hbWVxAH4AAXhwAAB0AAgxMS8wNy84OXQAIGFnaWJzb25AY2xldmVyY2xvdWRjb21wdXRpbmcuY29tdAAHYWdpYnNvbnQAAU1wdAAGR2lic29udAAKW0JAOTMyMGViZnQACjkwNjIzMTE4MjB0AAdhZ2lic29u
+birthday: 11/07/89
+uid: agibson
+cn: agibson
+javaClassNames: com.ccc.users.core.BasicUser
+javaClassNames: java.lang.Object
+javaClassNames: org.springframework.security.core.userdetails.UserDetails
+telephoneNumber: 9062311820
+sn: Gibson
+userPassword: {SSHA}OV1s1HA3JSPwMujVdUzmAlIEDze/nRQZ813iBQ==
+gender: M
+mail: agibson@clevercloudcomputing.com
+javaClassName: com.ccc.users.core.BasicUser
+entryUUID: 4643dac0-9063-497f-9c03-ce41191416f8
+createTimestamp: 20110729171456Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+pwdChangedTime: 20110729180804.396Z
+modifyTimestamp: 20110729180804Z
+modifiersName: cn=Internal Client,cn=Root DNs,cn=config
+
+dn: cn=abamra,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: javaSerializedObject
+objectClass: basicUser
+objectClass: javaObject
+objectClass: top
+javaSerializedData:: rO0ABXNyABxjb20uY2NjLnVzZXJzLmNvcmUuQmFzaWNVc2VyAAAAAAAAAAECAAtaABJjcmVkZW50aWFsc0V4cGlyZWRaAAdlbmFibGVkTAAIYmlydGhkYXl0ABJMamF2YS9sYW5nL1N0cmluZztMAAVlbWFpbHEAfgABTAAJZmlyc3ROYW1lcQB+AAFMAAZnZW5kZXJxAH4AAUwABmdyb3Vwc3EAfgABTAAIbGFzdE5hbWVxAH4AAUwACHBhc3N3b3JkcQB+AAFMAAtwaG9uZU51bWJlcnEAfgABTAAIdXNlck5hbWVxAH4AAXhwAAB0AAgwOS8yNC84NnQAH2FiYW1yYUBjbGV2ZXJjbG91ZGNvbXB1dGluZy5jb210AAZhYmFtcmF0AAFNcHQABUJhbXJhdAALW0JAMzU2NjIyNTB0AAo5MDYyMzExODIwdAAGYWJhbXJh
+birthday: 09/24/86
+uid: abamra
+cn: abamra
+javaClassNames: com.ccc.users.core.BasicUser
+javaClassNames: java.lang.Object
+javaClassNames: org.springframework.security.core.userdetails.UserDetails
+telephoneNumber: 9062311820
+sn: Bamra
+userPassword: {SSHA}bWtViFCbm8+KR1n3Jffs0v1ud4GsuEA3ibkfLw==
+gender: M
+mail: abamra@clevercloudcomputing.com
+javaClassName: com.ccc.users.core.BasicUser
+entryUUID: 5c6248df-293d-46c9-b3c3-edf3a4fc7b88
+createTimestamp: 20110729171457Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+pwdChangedTime: 20110729213956.715Z
+modifyTimestamp: 20110729213956Z
+modifiersName: cn=Internal Client,cn=Root DNs,cn=config
+
+dn: cn=mjgodfre,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: javaSerializedObject
+objectClass: basicUser
+objectClass: javaObject
+objectClass: top
+javaSerializedData:: rO0ABXNyABxjb20uY2NjLnVzZXJzLmNvcmUuQmFzaWNVc2VyAAAAAAAAAAECAAtaABJjcmVkZW50aWFsc0V4cGlyZWRaAAdlbmFibGVkTAAIYmlydGhkYXl0ABJMamF2YS9sYW5nL1N0cmluZztMAAVlbWFpbHEAfgABTAAJZmlyc3ROYW1lcQB+AAFMAAZnZW5kZXJxAH4AAUwABmdyb3Vwc3EAfgABTAAIbGFzdE5hbWVxAH4AAUwACHBhc3N3b3JkcQB+AAFMAAtwaG9uZU51bWJlcnEAfgABTAAIdXNlck5hbWVxAH4AAXhwAAF0AAgxMS8wNi84OXQAIW1qZ29kZnJlQGNsZXZlcmNsb3VkY29tcHV0aW5nLmNvbXQACG1qZ29kZnJldAABTXQAAHQAB0dvZGZyZXl0AAM0NTZ0AAo5MDYyMzExODIwdAAIbWpnb2RmcmU=
+birthday: 11/06/89
+uid: mjgodfre
+cn: mjgodfre
+javaClassNames: com.ccc.users.core.BasicUser
+javaClassNames: java.lang.Object
+javaClassNames: org.springframework.security.core.userdetails.UserDetails
+telephoneNumber: 9062311820
+sn: Godfrey
+userPassword: {SSHA}Y+chXhtirCpA1cp3rQClUNdJtKRG06bSAXyliQ==
+gender: M
+mail: mjgodfre@clevercloudcomputing.com
+javaClassName: com.ccc.users.core.BasicUser
+entryUUID: 0df494b0-f9b0-491a-9f89-c4dcc834aeaf
+createTimestamp: 20110729171844Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+pwdChangedTime: 20110729171844.669Z
+
+dn: cn=admin,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: admin
+uniqueMember: cn=agibson,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+entryUUID: 06e9b365-a922-4749-9752-4c95d8eecf3d
+createTimestamp: 20110730030332Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+modifyTimestamp: 20110801030823Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=user,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: user
+entryUUID: 54ec4e35-86a1-4aca-8ab1-ff6498d1862c
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110730032520Z
+modifyTimestamp: 20110801030816Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=customer,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: customer
+entryUUID: 305c1d67-f704-460a-b4cf-bfe1a33c1f4e
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110730032653Z
+modifyTimestamp: 20110801030807Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=purchaser,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: purchaser
+entryUUID: 20e6b4b4-f961-45b4-a655-5668b5b63c07
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110730032713Z
+modifyTimestamp: 20110801030752Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=researcher,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: researcher
+entryUUID: 23e26954-3519-400f-93a8-777becb54026
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110730032717Z
+modifyTimestamp: 20110801030758Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=btendres,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: javaSerializedObject
+objectClass: basicUser
+objectClass: javaObject
+objectClass: top
+javaSerializedData:: rO0ABXNyABxjb20uY2NjLnVzZXJzLmNvcmUuQmFzaWNVc2VyAAAAAAAAAAECAAtaABJjcmVkZW50aWFsc0V4cGlyZWRaAAdlbmFibGVkTAAIYmlydGhkYXl0ABJMamF2YS9sYW5nL1N0cmluZztMAAVlbWFpbHEAfgABTAAJZmlyc3ROYW1lcQB+AAFMAAZnZW5kZXJxAH4AAUwABmdyb3Vwc3EAfgABTAAIbGFzdE5hbWVxAH4AAUwACHBhc3N3b3JkcQB+AAFMAAtwaG9uZU51bWJlcnEAfgABTAAIdXNlck5hbWVxAH4AAXhwAAF0AAgwNy8yNS85MHQAIWJ0ZW5kcmVzQGNsZXZlcmNsb3VkY29tcHV0aW5nLmNvbXQACGJ0ZW5kcmVzdAABTXQAAHQABkVuZHJlc3QADG1hZHNjaWVudGlzdHQACjkwNjIzMTE4MjB0AAhidGVuZHJlcw==
+birthday: 07/25/90
+uid: btendres
+cn: btendres
+javaClassNames: com.ccc.users.core.BasicUser
+javaClassNames: java.lang.Object
+javaClassNames: org.springframework.security.core.userdetails.UserDetails
+telephoneNumber: 9062311820
+sn: Endres
+userPassword: {SSHA}NgUfYPP6ZHWJya6ilE0k0Ro9qN42EKgL7Gqt+g==
+gender: M
+mail: btendres@clevercloudcomputing.com
+javaClassName: com.ccc.users.core.BasicUser
+entryUUID: 4f7e5fcb-9c6e-4d11-9cf8-3b9264940ab3
+createTimestamp: 20110730044522Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+pwdChangedTime: 20110730044522.803Z
+
+dn: cn=trader,ou=Groups,dc=clevercloudcomputing,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: trader
+entryUUID: 79e58257-f46c-4158-a374-ab91e0e29ea5
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110730044706Z
+modifyTimestamp: 20110730044717Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=billing,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+objectClass: basicUser
+birthday: 11/07/89
+givenName: billing
+uid: billing
+cn: billing
+telephoneNumber: 9062311820
+sn: billing
+userPassword: {SSHA}cRTIWK8Z20F93NUm9axl/9aizWHjhWaBs//ebQ==
+gender: M
+mail: billing@clevercloudcomputing.com
+entryUUID: 90cbf647-af25-4c06-8b73-c8e13e364e8d
+pwdChangedTime: 20110730165741.862Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110730165304Z
+modifyTimestamp: 20110730204140Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=admin,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: javaSerializedObject
+objectClass: basicUser
+objectClass: javaObject
+objectClass: top
+javaSerializedData:: rO0ABXNyABxjb20uY2NjLnVzZXJzLmNvcmUuQmFzaWNVc2VyAAAAAAAAAAECAAtaABJjcmVkZW50aWFsc0V4cGlyZWRaAAdlbmFibGVkTAAIYmlydGhkYXl0ABJMamF2YS9sYW5nL1N0cmluZztMAAVlbWFpbHEAfgABTAAJZmlyc3ROYW1lcQB+AAFMAAZnZW5kZXJxAH4AAUwABmdyb3Vwc3EAfgABTAAIbGFzdE5hbWVxAH4AAUwACHBhc3N3b3JkcQB+AAFMAAtwaG9uZU51bWJlcnEAfgABTAAIdXNlck5hbWVxAH4AAXhwAAB0AAoxMS8wNy8xOTg5dAAeYWRtaW5AY2xldmVyY2xvdWRjb21wdXRpbmcuY29tdAAFYWRtaW50AAFNcHQABWFkbWludAAFYWRtaW50AAo5MDYyMzExODIwdAAFYWRtaW4=
+birthday: 11/07/1989
+uid: admin
+cn: admin
+javaClassNames: com.ccc.users.core.BasicUser
+javaClassNames: java.lang.Object
+javaClassNames: org.springframework.security.core.userdetails.UserDetails
+telephoneNumber: 9062311820
+sn: admin
+userPassword: {SSHA}d12aJx59Vc4gUtZm7XNfkojpCRfhSW2WTEJZIg==
+gender: M
+mail: admin@clevercloudcomputing.com
+javaClassName: com.ccc.users.core.BasicUser
+entryUUID: 83d4bb76-29d5-4694-91da-bb05644f9f2f
+createTimestamp: 20110730215328Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+pwdChangedTime: 20110730215328.694Z
+
+dn: cn=gsw85,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+objectClass: basicUser
+birthday: 01/06/86
+givenName: Shu Wei
+uid: gsw85
+cn: gsw85
+telephoneNumber: 9063704269
+sn: Goh
+userPassword: {SSHA}CafAk/sMoHdCfRZXEHL2rGjzaNRtJbWoeC3esQ==
+gender: M
+mail: gsw85@clevercloudcomputing.com
+entryUUID: f9af13aa-a076-41c6-b65d-0af99e8c6567
+pwdChangedTime: 20110731040502.564Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110731040502Z
+modifyTimestamp: 20110731040617Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=y.min,cn=LocalUsers,cn=mail.clevercloudcomputing.com,dc=clevercloudcomputing,dc=com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+objectClass: basicUser
+birthday: 08/01/88
+givenName: Yuanfei
+uid: y.min
+cn: y.min
+telephoneNumber: 9893953900
+sn: Min
+userPassword: {SSHA}2DJKM18Sz/dLtHJMXABZ0GHquo0/5p/tFi3aFg==
+gender: F
+mail: y.min@clevercloudcomputing.com
+entryUUID: 8dd82544-ef69-4249-98d9-ea824805a198
+pwdChangedTime: 20110801021140.576Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20110801021140Z
+modifyTimestamp: 20110801021213Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: ou=Servers,dc=clevercloudcomputing,dc=com
+objectClass: organizationalUnit
+objectClass: javaSerializedObject
+objectClass: top
+objectClass: javaObject
+javaSerializedData:: rO0ABXNyABtjb20uY2NjLnVzZXJzLmxkYXAuc3RvcmUuT1VIMeruNB4FPgIAAUwAAmRudAASTGphdmEvbGFuZy9TdHJpbmc7eHB0AClvdT1TZXJ2ZXJzLGRjPWNsZXZlcmNsb3VkY29tcHV0aW5nLGRjPWNvbQ==
+javaClassNames: com.ccc.users.ldap.store.OU
+javaClassNames: java.lang.Object
+javaClassNames: java.io.Serializable
+ou: Servers
+javaClassName: com.ccc.users.ldap.store.OU
+entryUUID: f670269b-7b16-49f9-9aa2-665deb4ce246
+createTimestamp: 20110802205430Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: ou=Accounts,dc=clevercloudcomputing,dc=com
+objectClass: organizationalUnit
+objectClass: javaSerializedObject
+objectClass: top
+objectClass: javaObject
+javaSerializedData:: rO0ABXNyABtjb20uY2NjLnVzZXJzLmxkYXAuc3RvcmUuT1VIMeruNB4FPgIAAUwAAmRudAASTGphdmEvbGFuZy9TdHJpbmc7eHB0ACpvdT1BY2NvdW50cyxkYz1jbGV2ZXJjbG91ZGNvbXB1dGluZyxkYz1jb20=
+javaClassNames: com.ccc.users.ldap.store.OU
+javaClassNames: java.lang.Object
+javaClassNames: java.io.Serializable
+ou: Accounts
+javaClassName: com.ccc.users.ldap.store.OU
+entryUUID: 6ed3069d-ff1b-4fa1-977b-4bdda65e7307
+createTimestamp: 20110802205431Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=hotmail.com,ou=Servers,dc=clevercloudcomputing,dc=com
+objectClass: server
+objectClass: javaSerializedObject
+objectClass: top
+objectClass: javaObject
+ipServicePort: 995
+javaSerializedData:: rO0ABXQAOGNuPWhvdG1haWwuY29tLG91PVNlcnZlcnMsZGM9Y2xldmVyY2xvdWRjb21wdXRpbmcsZGM9Y29t
+ipHostNumber: 65.55.72.151
+cn: hotmail.com
+javaClassNames: java.lang.String
+javaClassNames: java.lang.Object
+javaClassNames: java.io.Serializable
+javaClassNames: java.lang.Comparable
+javaClassNames: java.lang.CharSequence
+mailServerType: pop3
+javaClassName: java.lang.String
+associatedDomain: hotmail.com
+entryUUID: 6c6e8247-aef4-4047-9429-f9b0cdec8ef9
+createTimestamp: 20110803032028Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=clevercloudcomputing.com,ou=Servers,dc=clevercloudcomputing,dc=com
+objectClass: server
+objectClass: javaSerializedObject
+objectClass: top
+objectClass: javaObject
+ipServicePort: 443
+javaSerializedData:: rO0ABXQARWNuPWNsZXZlcmNsb3VkY29tcHV0aW5nLmNvbSxvdT1TZXJ2ZXJzLGRjPWNsZXZlcmNsb3VkY29tcHV0aW5nLGRjPWNvbQ==
+ipHostNumber: 50.57.101.26
+cn: clevercloudcomputing.com
+javaClassNames: java.lang.String
+javaClassNames: java.lang.Object
+javaClassNames: java.io.Serializable
+javaClassNames: java.lang.Comparable
+javaClassNames: java.lang.CharSequence
+mailServerType: imap
+javaClassName: java.lang.String
+associatedDomain: clevercloudcomputing.com
+entryUUID: 1a65eff7-a4a2-49e2-b7e9-f2bfb77afe6c
+createTimestamp: 20110803033523Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=goblinhacker,ou=Accounts,dc=clevercloudcomputing,dc=com
+objectClass: altMailAccount
+objectClass: javaSerializedObject
+objectClass: top
+objectClass: javaObject
+javaSerializedData:: rO0ABXNyAC5jb20uY2NjLnVzZXJzLmludGVncmF0aW9uLmVtYWlsLlVzZXJBbHRBY2NvdW50XkfZSJCJ5owCAAVMAAthbHRVc2VyTmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wAEGFzc29jaWF0ZWRTZXJ2ZXJxAH4AAUwABWVtYWlscQB+AAFMAAhwYXNzd29yZHEAfgABTAAIdXNlck5hbWVxAH4AAXhwdAAMZ29ibGluaGFja2VydAALaG90bWFpbC5jb210ABZnb2JsaW5oYWNrZXJAeWFob28uY29tcHQAB2FnaWJzb24=
+uid: agibson
+cn: goblinhacker
+javaClassNames: com.ccc.users.integration.email.UserAltAccount
+javaClassNames: java.lang.Object
+javaClassNames: java.io.Serializable
+mail: goblinhacker@yahoo.com
+otherMailbox: goblinhacker
+javaClassName: com.ccc.users.integration.email.UserAltAccount
+associatedDomain: hotmail.com
+entryUUID: 2ee07028-207b-4f52-862f-a18514789d20
+createTimestamp: 20110803033523Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+

@@ -1,0 +1,221 @@
+<HTML>
+<HEAD>
+<title>
+File System Service Provider for JNDI 1.2 Optional Package
+</title>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT=#000000 LINK=#0000ff VLINK=#000077
+ALINK=#ff0000>
+
+<hr SIZE=3 NOSHADE WIDTH="100%">
+<center>
+<h1>
+File System Service Provider for the 
+<br>
+Java Naming and Directory Interface<font size=4><sup>TM</sup></font> (JNDI) 1.2
+<br>
+Optional Package
+</h1>
+</center>
+<hr SIZE=3 NOSHADE WIDTH="100%">
+<P><FONT SIZE=-1>Please send feedback to 
+<a href="mailto:jndi@java.sun.com">jndi@java.sun.com</a></FONT>
+
+<P>
+<P><I>Table of Contents</I>
+<UL>
+<LI>
+<A HREF="#INTRO">Introduction</A></LI>
+
+<LI>  
+<A HREF="#JDK13">Java<sup>TM</sup> 2 SDK, Standard Edition, v 1.3</A></LI>
+
+<LI>  
+<A HREF="#JDK12">Java<sup>TM</sup> 2 SDK, Standard Edition, v 1.2.x</A></LI>
+   
+<LI>
+<A HREF="#JDK11">JDK<sup>TM</sup> 1.1.x</A></LI>
+
+</UL>
+<P>
+<HR>
+<P>
+
+<A NAME="INTRO">
+<H2>Introduction</H2>
+<p>
+
+This document describes how to use the file system service provider
+with the Java 2 SDK, Standard Edition, v 1.3, 
+the Java 2 SDK, Standard Edition, v 1.2.x,
+and the JDK 1.1.x.
+
+It is a companion to the main
+<a href=jndi-fs.html>File System Service Provider</a>
+document.
+
+
+
+<hr>
+<p>
+<A NAME="JDK13">
+<H2>Java 2 SDK, Standard Edition, v 1.3
+</H2>
+
+<h4>Software Installation</h4>
+
+<ol>
+<li>Unzip the distribution file to get a <tt>lib</tt> directory. 
+
+<li>If you are installing the file system provider as an <em>installed</em>
+extension, copy <tt>fscontext.jar</tt> and <tt>providerutil.jar</tt> 
+from the <tt>lib</tt> directory to the <tt>$JAVA_HOME/jre/lib/ext</tt> directory.
+
+<li>If you are not installing the file system provider as an installed extension,
+copy the <tt>fscontext.jar</tt> to its permanent location and add its locations
+to your classpath.
+</ol>
+
+<h4>Security Considerations</h4>
+
+When a security manager has been installed, 
+you must grant to the application using JNDI and the
+file system service provider the following permissions:
+
+<p>
+
+<p>
+
+<pre>permission java.io.FilePermission <em>file</em>, <em>actions</em>;</pre>
+<blockquote>
+	For the files and directories identified in 
+        the <tt>java.naming.provider.url</tt> property
+        and in file names supplied to context methods.
+	<em>file</em> specifies the files or directories;
+        <em>actions</em> is a list of actions ("read", "write", "delete",
+	"execute").  See <tt><a href=
+    "http://java.sun.com/products/jdk/1.2/docs/api/java/io/FilePermission.html">
+    java.io.FilePermission</a></tt> for details.
+</blockquote>
+<p>
+
+<p>
+If you have installed the file system service provider as an
+installed extension, that is, <tt>fscontext.jar</tt> has been installed in the
+<tt>$JAVA_HOME/jre/lib/ext</tt> directory, you need to take no further
+action.
+<p>
+<p>
+Otherwise, perform the following additional step:
+<ul>
+<li>Grant the permissions listed above
+to the file system service provider (<tt>fscontext.jar</tt>).
+</ol>
+<hr>
+
+<p>
+<A NAME="JDK12">
+<H2>Java 2 SDK, Standard Edition, v 1.2.x
+</H2>
+<p>
+<h4>Software Dependencies</h4>
+
+<ul>
+<li>
+<a href=http://java.sun.com/products/jndi/#download>JNDI 1.2</a>.
+</ul>
+
+<h4>Software Installation</h4>
+
+<ol>
+<li>Unzip the distribution file to get a <tt>lib</tt> directory. 
+
+<li>If you are using JNDI as an <em>installed</em>
+extension, copy the JARs (<tt>fscontext.jar</tt> and <tt>providerutil.jar</tt>)
+from the <tt>lib</tt> directory to the <tt>$JAVA_HOME/jre/lib/ext</tt> directory.
+
+<li>If you are not using JNDI as an installed extension,
+copy the JARs to their permanent locations and add their locations
+to your classpath.
+</ol>
+ 
+
+<h4>Security Considerations</h4>
+
+When a security manager has been installed, 
+you must grant to the application using JNDI and the
+file system context service provider the following permissions:
+
+<p>
+
+<pre>permission java.io.FilePermission <em>file</em>, <em>actions</em>;</pre>
+<blockquote>
+	For the files and directories identified in 
+        the <tt>java.naming.provider.url</tt> property
+        and in file names supplied to context methods.
+	<em>file</em> specifies the files or directories;
+        <em>actions</em> is a list of actions ("read", "write", "delete",
+	"execute").  See <tt><a href=
+    "http://java.sun.com/products/jdk/1.2/docs/api/java/io/FilePermission.html">
+    java.io.FilePermission</a></tt> for details.
+</blockquote>
+<p>
+
+If you are using JNDI and the file system service provider as an
+installed extension, that is, their JARs have been installed in the
+<tt>$JAVA_HOME/jre/lib/ext</tt> directory, you need to take no further
+action.
+<p>
+<p>
+Otherwise, perform the following additional steps:
+<ul>
+<li>Grant the permissions listed above
+to the file system service provider (<tt>fscontext.jar</tt>, <tt>providerutil.jar</tt>)
+and JNDI (<tt>jndi.jar</tt>).
+<li>Grant the permissions listed in
+<a href="../jndi-ext.html#SEC">the JNDI 1.2 Optional Package document</a>.
+</ol>
+
+<hr>
+<p>
+<A NAME="JDK11">
+<H2>JDK 1.1.x</h2>
+<p>
+<h4>Software Dependencies</h4>
+
+<ul>
+<li>
+<a href=http://java.sun.com/products/jndi/#download>JNDI 1.2</a>.
+</ul>
+
+<h4>Software Installation</h4>
+
+<ol>
+<li>Unzip the distribution file to get a <tt>lib</tt> directory. 
+
+<li>Copy the JARs (<tt>fscontext.jar</tt> and <tt>providerutil.jar</tt>)
+from the <tt>lib</tt> directory to its permanent location.
+
+<li>Add the location of the JARs to your classpath.
+</ol>
+ 
+
+<h4>Security Considerations</h4>
+
+Follow the instructions in
+<a href="../jndi-ext.html#JDK11">the JNDI Optional Package document</a>.
+<p>
+If you are using JNDI and the file system service provider from an
+applet, you need to grant the applet permission
+to read the files and directories that it will be accessing
+via <tt>java.naming.factory.initial</tt> property and in file names
+supplied to context methods.
+
+<HR SIZE=3 NOSHADE WIDTH=100%>
+<br><i>Copyright &copy; 1999 Sun Microsystems, Inc., All Rights Reserved.</i> 
+
+   
+</body>
+</html>
+

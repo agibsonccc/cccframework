@@ -1,0 +1,20 @@
+{
+  "attendees" : [ {
+    "displayName" : "emleonar@mtu.edu",
+    "email" : "emleonar@mtu.edu"
+  } ],
+  "description" : "The following is a new meeting request:\n\nSubject: Mandatory Final Hall Meeting \nOrganizer: \"Eddie Leonard\" <emleonar@mtu.edu> \n\nLocation: Kitchenette \nTime: Monday, April 20, 2009, 10:00:00 PM - 10:25:00 PM GMT -05:00 US/Canada Eastern\n \nInvitees: \"lambda3-0-l\" <lambda3-0-l@mtu.edu> \n\n*~*~*~*~*~*~*~*~*~*\n\n",
+  "end" : {
+    "dateTime" : "2009-04-21T02:25:00.000"
+  },
+  "iCalUID" : "84af3143-40dc-4d71-9a07-0c316abf41d3",
+  "location" : "Kitchenette",
+  "organizer" : {
+    "displayName" : "mailto:emleonar@mtu.edu",
+    "email" : "emleonar@mtu.edu"
+  },
+  "start" : {
+    "dateTime" : "2009-04-21T02:00:00.000"
+  },
+  "summary" : "Mandatory Final Hall Meeting"
+}

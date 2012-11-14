@@ -1,0 +1,154 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ccc</groupId>
+	<artifactId>ccc-mail</artifactId>
+	<name>ClevMail</name>
+	<description>CCC Mail Client</description>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.ccc.cccframework</groupId>
+		<artifactId>cccframework</artifactId>
+		<version>1.1</version>
+		<relativePath>../</relativePath>
+	</parent>
+	
+	<repositories>
+	<repository>
+		<url>https://repository.apache.org/content/repositories/snapshots/</url>
+	<id>amber incubating</id>
+	<snapshots>
+	<enabled>
+	true
+	</enabled>
+	</snapshots>
+	<releases>
+	<enabled>true</enabled>
+	</releases>
+	</repository>
+	</repositories>
+	<modules>
+				<module>mail-core</module>
+		
+		<module>cccmail-james</module>
+		<module>mailmvc</module>
+		<module>mail-user</module>
+		<module>mail-list</module>
+		<module>registration</module>
+		<module>ccc-maildir</module>
+	</modules>
+	<properties>
+		<cccmail.version>1.1</cccmail.version>
+		<james.version>3.0-beta4</james.version>
+	</properties>
+	
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.ccc</groupId>
+			<artifactId>ccc-util</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.ccc.cccframework</groupId>
+			<artifactId>messaging-commons</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+
+		</dependency>
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+		</dependency>
+
+		<!-- Http client -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+
+		</dependency>
+
+
+		<!-- JSON Object -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator-annotation-processor</artifactId>
+			<version>4.1.0.Final</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>hibernate-validator</artifactId>
+					<groupId>org.hibernate</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.jsslutils</groupId>
+			<artifactId>jsslutils</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>20040616</version>
+		</dependency>
+
+
+
+
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>oro</groupId>
+			<artifactId>oro</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+
+
+	</dependencies>
+</project>

@@ -1,0 +1,70 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- Session factory configuration, enables hibernate to work. -->
+	<bean id="sessionFactory" name="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- Mapped entities -->
+		<property name="annotatedClasses">
+			<list>
+				<!-- Each one of these maps to a table. -->
+				<value>com.ccc.users.core.BasicUser</value>
+				<value>com.ccc.users.core.UserGroup</value>
+				<value>com.ccc.users.core.UserContact</value>
+				<value>com.ccc.users.auth.PersistentLogin</value>
+				<value>com.ccc.users.core.UserSettings</value>
+				<value>com.ccc.webapp.apimanagement.model.ApiHolder</value>
+				<value>com.ccc.webapp.apimanagement.model.Service</value>
+				<value>com.ccc.webapp.apimanagement.model.Subscribed</value>
+				<value>com.ccc.webapp.apimanagement.model.AuthSupports</value>
+
+				<value>com.ccc.webapp.apimanagement.model.ServiceProvider</value>
+				<value>com.ccc.webapp.apimanagement.model.AuthType</value>
+				<value>com.ccc.security.amber.oauth2.model.OAuthParams</value>
+
+				<!-- <value>com.ccc.security.amber.oauth2.model.OAuthRegParams</value> -->
+				<value>com.ccc.webapp.apimanagement.model.ScopeService</value>
+				<value>com.ccc.webapp.apimanagement.model.ScopeHolder</value>
+				<value>com.ccc.webapp.apimanagement.model.OAuth2AppInfo</value>
+				<value>com.ccc.webapp.apimanagement.model.OAuth2Urls</value>
+				<value>com.ccc.webapp.apimanagement.model.OAuth2KeyUser</value>
+				<value>com.ccc.webapp.apimanagement.model.AccessKeyForUser</value>
+				<value>com.ccc.webapp.apimanagement.model.OAuth1Info</value>
+				<value>com.ccc.webapp.apimanagement.model.OAuth1AccessToken</value>
+				<value>com.ccc.webapp.apimanagement.model.OAuth1RequestToken</value>
+
+
+			</list>
+		</property>
+		<property name="hibernateProperties" ref="hibernateConfigProperties" />
+	</bean>
+
+
+	
+
+	<bean id="hibernateConfigProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location">
+			<value>classpath:com/ccc/camelcomponents/ical/tests/hibernate.properties</value>
+		</property>
+	</bean>
+
+
+
+	
+
+	<!-- Database access -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${hibernate.driver}" />
+		<property name="url" value="${hibernate.url}" />
+		<property name="username" value="${hibernate.user}" />
+		<property name="password" value="${hibernate.password}" />
+	</bean>
+
+</beans>

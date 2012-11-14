@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.1.xsd
+                        http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/p
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/tx 
+                        http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- Properties files -->
+	<bean id="propertyPlaceHolderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:security.properties</value>
+				<value>classpath:ldap.properties</value>
+				<value>classpath:hibernate.properties</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+
+
+	<security:ldap-user-service id="ldapUserService"
+		group-search-base="${spring.ldap.groupSearchBase}"
+		group-role-attribute="${spring.ldap.groupRoleAttribute}"
+		group-search-filter="${spring.ldap.groupSearchFilter}"
+		user-search-base="${spring.ldap.userSearchBase}" user-search-filter="${spring.ldap.userSearchFilter}" />
+
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:ldap-authentication-provider
+			server-ref="contextSource" group-search-base="${spring.ldap.groupSearchBase}"
+			user-search-base="${spring.ldap.userSearchBase}" user-search-filter="${spring.ldap.userSearchFilter}"
+			group-role-attribute="${spring.ldap.groupRoleAttribute}"
+			group-search-filter="${spring.ldap.groupSearchFilter}" role-prefix="${spring.ldap.rolePrefix}" />
+	</security:authentication-manager>
+
+	<security:ldap-server id="contextSource" url="${spring.ldap.url}"
+		port="389" manager-dn="${spring.ldap.managerDn}" manager-password="${spring.ldap.managerPassword}" />
+
+	<!-- LDAP Template used to execute core LDAP functionality -->
+	<bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
+		<constructor-arg ref="contextSource" />
+	</bean>
+
+	<!-- LDAP User client -->
+	<bean id="ldapUserClient" class="com.ccc.users.ldap.client.LDAPUserClient">
+		<property name="userStore" ref="ldapUserStore" />
+		<property name="userDirectory" value="${user.directory}" />
+		<property name="baseDn" value="${user.dn}" />
+	</bean>
+
+
+	<!-- User store -->
+	<bean id="ldapUserStore" class="com.ccc.users.ldap.store.LDAPUserStore">
+		<property name="dnForUsers" value="${user.dn}" />
+		<property name="userDirectory" value="${user.directory}" />
+	</bean>
+
+	<!-- LDAP Security Service <bean id="securityService" class="com.xxx.LdapUserManagementServiceImpl"> 
+		<constructor-arg ref="ldapTemplate" /> </bean> -->
+
+
+
+
+</beans>

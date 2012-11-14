@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+@import "../reindeer/styles.css";
+.menuTab {
+	background: url(../img/menulink.gif);
+	width: 550px;
+	height: 100px;
+	background: -moz-linear-gradient(-90deg, #003471, #448CCB);
+	background: -webkit-gradient(linear, left top, left bottom, from(#003471),
+		to(#448CCB) );
+}
+
+button {
+	/* The padding is just there to move the h1 element to the center of the div */
+	padding-top: 17px;
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	color: #0D4383;
+	text-shadow: white -1px 0, rgba(0, 0, 0, 0.3) 0 -1px,
+		rgba(255, 255, 255, 0.5) 0 1px, rgba(0, 0, 0, 0.3) -1px -2px;
+}
+
+button {
+	background: -moz-linear-gradient(-90deg, #003471, #448CCB);
+	background: -webkit-gradient(linear, left top, left bottom, from(#003471),
+		to(#448CCB) );
+}
+.v-tabsheet-tabitem {
+	background-color:#3ea7f5;
+	color:white;
+}
+
+.v-tabsheet-tabitem .v-caption {
+ background-color:#3ea7f5;
+}
+.facebook{
+	background-color:#5b80b7;
+	color:#fcfcfc;
+}
+
+.background{
+	background-color:#083049;
+	color:white;
+	overflow:scroll;
+}
+
+.header{
+	color:#3ea7f5;
+	
+}
+.v-caption {
+	background-color:#3ea7f5;
+	color:white;
+}
+
+.v-view {
+	background-color:#083049;
+	color:white;
+}
+
+.v-button .v-button-decorated .v-button-wrap .v-button-caption  {
+		line-height: 1;
+	text-decoration:none;
+	display: inline-block;
+	padding: 8px 12px;
+	font-family: Cantarell-Bold, Arial, sans-serif;
+	text-transform:uppercase;
+	font-size:22px;
+	letter-spacing:1px;
+	color:#fff;
+	cursor:pointer;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.40);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.40);
+	text-shadow: -1px -1px 0px rgba(0,0,0,0.15);
+	
+	background-image: -moz-linear-gradient(100% 100% 90deg, #76bbc5, #9ecbd1);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9ecbd1), to(#76bbc5))
+}
